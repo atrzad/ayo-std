@@ -1,0 +1,29 @@
+{
+  "name": "ayo-std",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ayo Std: painel de estudos que une os cofres do Obsidian (Dev, ENEM, Manaus Previdência e BB).",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning --watch server/index.js",
+    "senha": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/scripts/senha.js",
+    "fontes": "node server/scripts/copiar-fontes.js",
+    "gerar-dev": "node server/scripts/gerar-trilha-dev.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "markdown-it": "^14.3.2",
+    "nodemailer": "^10.0.13"
+  },
+  "devDependencies": {
+    "@fontsource/jacquard-24": "^5.3.0",
+    "@fontsource/jacquarda-bastarda-9": "^5.3.0",
+    "@fontsource/pixelify-sans": "^5.3.0",
+    "@fontsource/silkscreen": "^5.3.0",
+    "@fontsource/vt323": "^5.3.0"
+  }
+}

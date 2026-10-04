@@ -1,0 +1,20 @@
+[Unit]
+Description=Ayo Std - painel de estudos dos cofres do Obsidian (porta 3300, só localhost)
+After=network.target
+# Se cair 5 vezes em 1 minuto, para de tentar (evita laço de reinício).
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Projects/ayo-std
+ExecStart=/usr/sbin/node --env-file=%h/Projects/ayo-std/.env --disable-warning=ExperimentalWarning server/index.js
+Environment=NODE_ENV=production
+Restart=always
+RestartSec=3
+NoNewPrivileges=yes
+UMask=0077
+MemoryMax=512M
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "dev",
+    "nome": "Trilha Dev",
+    "curto": "Dev",
+    "pasta": "~/Documents/Trilha Dev",
+    "mundo": "A Forja",
+    "lema": "Do elétron ao app. Cada fase é um minério novo na bigorna.",
+    "inicioPadrao": "2027-03-08"
+  },
+  {
+    "slug": "enem",
+    "nome": "ENEM 2026",
+    "curto": "ENEM",
+    "pasta": "~/Documents/ENEM",
+    "mundo": "A Jornada",
+    "lema": "Treine a equipe antes da Liga: dois dias de batalha, 08 e 15/11.",
+    "chamado": "Um ENEM selvagem aparece em {dias} dias!",
+    "provaNome": "o ENEM"
+  },
+  {
+    "slug": "manausprev",
+    "nome": "Manaus Previdência",
+    "curto": "Manaus Prev",
+    "pasta": "~/Documents/Manausprev Concurso",
+    "mundo": "O Templo da FCC",
+    "lema": "É perigoso ir sozinho. Leve o edital.",
+    "chamado": "Faltam {dias} dias para a última masmorra.",
+    "provaNome": "a prova da Manaus Previdência"
+  },
+  {
+    "slug": "bb",
+    "nome": "Banco do Brasil",
+    "curto": "BB",
+    "pasta": "~/Documents/BB Concurso",
+    "mundo": "A Fazenda",
+    "lema": "Plante questões todo dia. A colheita é em março.",
+    "chamado": "Faltam {dias} dias para o festival da colheita.",
+    "antesDoInicio": "A fazenda abre em {dias} dias, em {data}.",
+    "provaNome": "a prova do BB"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "completo": {
+    "descricao": "Todas as trilhas, tema pixel, progresso gravado nas notas do Obsidian",
+    "tema": "pixel",
+    "progresso": "arquivo",
+    "trilhas": "*"
+  },
+  "administrativo": {
+    "descricao": "Só Manaus Previdência (Administrativa) e BB (Comercial), tema normal, progresso próprio no banco do site",
+    "tema": "normal",
+    "progresso": "banco",
+    "trilhas": [
+      "manausprev",
+      "bb"
+    ],
+    "cargos": {
+      "manausprev": [
+        "administrativa"
+      ],
+      "bb": [
+        "comercial"
+      ]
+    },
+    "extensoes": [
+      ".md",
+      ".pdf"
+    ],
+    "excluirPadrao": "inform[aá]tic|tecnolog",
+    "excluirArquivos": [
+      "00-inventario.md",
+      "06-metas-e-resultados.md"
+    ]
+  },
+  "pessoal": {
+    "descricao": "Conta nova: só o próprio espaço, sem acesso aos cofres",
+    "tema": "pixel",
+    "progresso": "banco",
+    "trilhas": []
+  }
+}

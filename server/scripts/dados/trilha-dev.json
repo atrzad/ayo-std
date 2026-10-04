@@ -1,0 +1,2190 @@
+{
+ "FASES": [
+  {
+   "n": 0,
+   "cor": "preto",
+   "hex": "#1c1c1c",
+   "nome": "Alicerce",
+   "sub": "Como o computador pensa e como você vai estudar",
+   "why": "Não tem pré-requisito. Aqui você monta o método de estudo e o vocabulário que o resto da trilha usa."
+  },
+  {
+   "n": 1,
+   "cor": "marrom",
+   "hex": "#7a4a2b",
+   "nome": "Primeira linguagem",
+   "sub": "Python e Git; eletricidade básica em paralelo",
+   "why": "Python vem primeiro porque a sintaxe sai do caminho e você foca na lógica. Git entra junto, para que todo projeto tenha histórico desde o primeiro dia."
+  },
+  {
+   "n": 2,
+   "cor": "vermelho",
+   "hex": "#c3352d",
+   "nome": "Perto do metal",
+   "sub": "C, ponteiros e memória; do NAND a um computador inteiro",
+   "why": "Com a lógica firme, C mostra a memória como ela é. Em paralelo, você constrói um computador a partir de portas NAND, e os dois lados se encontram no assembly."
+  },
+  {
+   "n": 3,
+   "cor": "laranja",
+   "hex": "#e2761d",
+   "nome": "Pensar em algoritmos",
+   "sub": "Estruturas de dados e técnicas; transistores e eletrônica analógica",
+   "why": "Algoritmos vêm depois de C para você implementar as estruturas na mão, com ponteiros, em vez de só usar as prontas."
+  },
+  {
+   "n": 4,
+   "cor": "amarelo",
+   "hex": "#e3b91a",
+   "nome": "A web por dentro",
+   "sub": "HTML, CSS, JavaScript, TypeScript e React; lógica digital com CIs",
+   "why": "É onde a maioria das aplicações vive. TypeScript vem logo depois de JavaScript, e React só depois dos dois."
+  },
+  {
+   "n": 5,
+   "cor": "verde",
+   "hex": "#2e8b4a",
+   "nome": "Servidor, dados e rede",
+   "sub": "SQL, APIs, redes e Python avançado; microcontroladores",
+   "why": "O front da Fase 4 ganha servidor, banco e rede. No hardware, um microcontrolador passa a enviar dados para a sua API."
+  },
+  {
+   "n": 6,
+   "cor": "azul",
+   "hex": "#2a63c6",
+   "nome": "Infraestrutura e sistemas",
+   "sub": "Git avançado, Docker e CI/CD; CS:APP e sistemas operacionais",
+   "why": "Agora existe o que empacotar: Docker e CI/CD entregam o que você construiu. CS:APP e sistemas operacionais explicam o que roda por baixo, inclusive dentro de um container."
+  },
+  {
+   "n": 7,
+   "cor": "violeta",
+   "hex": "#7a4cc0",
+   "nome": "Mobile e silício",
+   "sub": "Java, Kotlin, Android e React Native; processadores e memórias a fundo",
+   "why": "Java vem antes de Kotlin porque o Android herdou o ecossistema dele. React Native vem depois do Android para você entender a parte nativa. No hardware, o detalhe chega ao transistor."
+  },
+  {
+   "n": 8,
+   "cor": "cinza",
+   "hex": "#8b9096",
+   "nome": "Plataforma .NET",
+   "sub": "C#, ASP.NET Core e o runtime; FPGA e Verilog",
+   "why": "Depois de Java e TypeScript, C# fica natural, e você compara plataformas. A FPGA fecha a trilha de hardware: sua CPU vira circuito."
+  },
+  {
+   "n": 9,
+   "cor": "branco",
+   "hex": "#f2f2ee",
+   "nome": "C++ e síntese",
+   "sub": "C++ moderno, engenharia, segurança e o projeto integrador",
+   "why": "C++ fica por último porque reúne tudo: a memória de C, a orientação a objetos de Java e C#, os genéricos do TypeScript. A trilha termina num sistema que junta todas as fases."
+  }
+ ],
+ "TRILHAS": {
+  "base": {
+   "n": "Fundamentos"
+  },
+  "py": {
+   "n": "Python"
+  },
+  "git": {
+   "n": "Git"
+  },
+  "c": {
+   "n": "C"
+  },
+  "alg": {
+   "n": "Algoritmos"
+  },
+  "web": {
+   "n": "Web · TS · React"
+  },
+  "back": {
+   "n": "Back-end · BD · Redes"
+  },
+  "docker": {
+   "n": "Docker · CI/CD"
+  },
+  "jvm": {
+   "n": "Java · Kotlin · Android"
+  },
+  "rn": {
+   "n": "React Native"
+  },
+  "net": {
+   "n": "C# · .NET"
+  },
+  "cpp": {
+   "n": "C++"
+  },
+  "eng": {
+   "n": "Engenharia"
+  },
+  "ele": {
+   "n": "Eletrônica",
+   "hw": true
+  },
+  "arq": {
+   "n": "Arquitetura · SO · Memória",
+   "hw": true
+  },
+  "emb": {
+   "n": "Embarcados · FPGA",
+   "hw": true
+  }
+ },
+ "MODS": [
+  {
+   "id": "B-01",
+   "f": 0,
+   "t": "base",
+   "n": "Como estudar programação",
+   "h": 6,
+   "w": "Você vai passar anos nisso. Um método ruim desperdiça mais horas do que qualquer escolha de linguagem.",
+   "k": [
+    "Prática deliberada: ler pouco, escrever muito código, errar e corrigir",
+    "Recordação ativa: fechar o material e reescrever de memória",
+    "Repetição espaçada com Anki para comandos, conceitos e sintaxe",
+    "Técnica Feynman: explicar o conceito por escrito como se fosse para um iniciante",
+    "Sair do “tutorial infinito”: cada módulo termina num projeto feito sem roteiro",
+    "IA no aprendizado: você escreve o código; a IA explica erros, revisa e faz perguntas",
+    "Caderno de bordo no Obsidian: uma nota por conceito, com um exemplo seu",
+    "Ler documentação oficial em inglês desde o começo (deprecated, overload, runtime, scope…)"
+   ],
+   "p": "Criar o cofre “Estudos Dev” no Obsidian com um modelo de nota (conceito, exemplo, dúvida, fonte) e um baralho Anki",
+   "r": [
+    [
+     "Learning How to Learn (Coursera)",
+     "https://www.coursera.org/learn/learning-how-to-learn",
+     "grátis · legendas em português"
+    ],
+    [
+     "Anki",
+     "https://apps.ankiweb.net",
+     "grátis no desktop e Android"
+    ]
+   ],
+   "ok": "Você tem um ritual definido (horário, revisão no Anki, nota do dia) e o cumpriu por duas semanas seguidas."
+  },
+  {
+   "id": "B-02",
+   "f": 0,
+   "t": "base",
+   "n": "Como o computador funciona: visão geral",
+   "h": 15,
+   "s": [
+    "MP"
+   ],
+   "w": "Antes de programar, entenda o que acontece quando um programa roda. O resto da trilha aprofunda estas ideias.",
+   "k": [
+    "Bit, byte, KB/MB/GB e KiB/MiB/GiB",
+    "Componentes: CPU, RAM, armazenamento, placa-mãe, barramentos e periféricos",
+    "Ciclo buscar–decodificar–executar",
+    "Como texto, imagem e som viram números (ASCII, UTF-8, pixels RGB, amostragem)",
+    "O papel do sistema operacional: processos, arquivos, memória e drivers",
+    "Linguagem de máquina, assembly e linguagens de alto nível",
+    "Compilador, interpretador e máquina virtual (C, Python, Java/C#)",
+    "Internet em uma página: IP, DNS, cliente, servidor e HTTP"
+   ],
+   "p": "Desenhar no papel ou no Excalidraw o caminho completo de abrir um site: teclado → CPU → SO → rede → servidor → tela",
+   "r": [
+    [
+     "Code, 2ª ed. (Charles Petzold), caps. 1–20",
+     "https://www.codehiddenlanguage.com",
+     "livro · o melhor ponto de partida"
+    ],
+    [
+     "CS50x, semana 0 (Harvard)",
+     "https://cs50.harvard.edu/x/",
+     "grátis · vídeo"
+    ],
+    [
+     "Crash Course Computer Science, eps. 1–15",
+     "https://www.youtube.com/results?search_query=Crash%20Course%20Computer%20Science",
+     "grátis · vídeo"
+    ]
+   ],
+   "ok": "Você explica, sem consultar nada, o que acontece entre dar dois cliques num programa e ele aparecer na tela."
+  },
+  {
+   "id": "B-03",
+   "f": 0,
+   "t": "base",
+   "n": "Matemática para computação",
+   "h": 25,
+   "w": "Binário, lógica e logaritmos aparecem em tudo: circuitos, algoritmos, redes e memória.",
+   "k": [
+    "Sistemas de numeração: decimal, binário, octal, hexadecimal e conversões",
+    "Inteiros com sinal: sinal-magnitude, complemento de dois e overflow",
+    "Potências de 2 e logaritmo na base 2 (por que log₂ aparece na busca binária)",
+    "Lógica proposicional: E, OU, NÃO, OU-exclusivo e tabelas-verdade",
+    "Leis de De Morgan e simplificação de expressões booleanas",
+    "Conjuntos, relações e funções",
+    "Contagem: princípio multiplicativo, permutação e combinação",
+    "Indução matemática e somatórios simples",
+    "Aritmética modular (resto da divisão)"
+   ],
+   "p": "Tabela feita à mão com o complemento de dois de −1 a −8 em 4 bits e as conversões de 10 números entre as quatro bases",
+   "r": [
+    [
+     "Khan Academy",
+     "https://pt.khanacademy.org",
+     "grátis · português"
+    ],
+    [
+     "Matemática Discreta e Suas Aplicações (Kenneth Rosen), caps. 1, 2 e 6",
+     null,
+     "livro"
+    ]
+   ],
+   "ok": "Você converte 0xBEEF para binário e decimal à mão e simplifica ¬(A ∧ B) ∨ A."
+  },
+  {
+   "id": "B-04",
+   "f": 0,
+   "t": "base",
+   "n": "Linux e terminal",
+   "h": 25,
+   "s": [
+    "MP"
+   ],
+   "w": "Servidores, Docker, embarcados e quase todas as ferramentas de desenvolvimento vivem no terminal. Você já usa Linux; agora vai entendê-lo.",
+   "k": [
+    "Hierarquia de diretórios (/, /home, /etc, /usr, /var, /dev, /proc); caminho absoluto e relativo",
+    "Arquivos: ls, cd, pwd, cp, mv, rm, mkdir, touch, cat, less, head, tail",
+    "Permissões: usuário, grupo e outros; rwx; chmod simbólico e octal; chown; sudo",
+    "Processos: ps, top/htop, kill, sinais, jobs, primeiro e segundo plano",
+    "stdin, stdout e stderr; redirecionamento (>, >>, 2>, <) e pipes (|)",
+    "Texto: grep, find, sort, uniq, wc, cut; sed e awk básicos",
+    "Variáveis de ambiente, PATH e o ~/.zshrc",
+    "Gerenciadores de pacotes: pacman no Arch, apt no Debian/Ubuntu",
+    "Shell script: variáveis, if, for, funções, $? e set -euo pipefail",
+    "systemd (systemctl, journalctl), SSH e chaves"
+   ],
+   "p": "Script que compacta uma pasta com a data no nome, mantém só as 7 cópias mais recentes e roda por um timer do systemd",
+   "r": [
+    [
+     "The Linux Command Line (William Shotts)",
+     "https://linuxcommand.org/tlcl.php",
+     "grátis · livro"
+    ],
+    [
+     "MIT Missing Semester, aulas 1–5",
+     "https://missing.csail.mit.edu",
+     "grátis · vídeo e texto"
+    ],
+    [
+     "OverTheWire: Bandit",
+     "https://overthewire.org/wargames/bandit/",
+     "grátis · jogo no terminal"
+    ],
+    [
+     "Arch Wiki",
+     "https://wiki.archlinux.org",
+     "referência"
+    ]
+   ],
+   "ok": "Você passa do nível 20 do Bandit e escreve um script de 30 linhas sem consultar exemplos de sintaxe."
+  },
+  {
+   "id": "B-05",
+   "f": 0,
+   "t": "base",
+   "n": "Ambiente de trabalho",
+   "h": 5,
+   "k": [
+    "VS Code: atalhos, terminal integrado, múltiplos cursores, busca no projeto",
+    "Extensões de linter, formatador e depurador",
+    "Digitação sem olhar o teclado, incluindo { } [ ] ( ) ; < > = | &",
+    "Pasta ~/dev com um diretório por projeto"
+   ],
+   "p": "Chegar a 40 palavras por minuto no Monkeytype com números e pontuação ligados",
+   "r": [
+    [
+     "VS Code",
+     "https://code.visualstudio.com/docs",
+     "documentação"
+    ],
+    [
+     "Monkeytype",
+     "https://monkeytype.com",
+     "grátis"
+    ],
+    [
+     "keybr",
+     "https://www.keybr.com",
+     "grátis"
+    ]
+   ],
+   "ok": "Você edita, roda e depura um arquivo sem tirar as mãos do teclado."
+  },
+  {
+   "id": "PY-01",
+   "f": 1,
+   "t": "py",
+   "n": "Lógica de programação com Python",
+   "h": 60,
+   "s": [
+    "BB"
+   ],
+   "w": "Python tem sintaxe limpa e deixa você pensar só na lógica. É também a linguagem mais usada para dados e IA.",
+   "k": [
+    "Instalação, REPL, rodar um script, print e input",
+    "Tipos: int, float, str, bool, None; conversão entre tipos",
+    "Operadores aritméticos, relacionais e lógicos; precedência",
+    "Condicionais: if, elif, else e match",
+    "Laços: while, for, range, break e continue",
+    "Funções: parâmetros, retorno, valores padrão, *args, **kwargs e escopo",
+    "Strings: fatiamento, métodos, f-strings e Unicode",
+    "Listas, tuplas, dicionários e conjuntos: quando usar cada um",
+    "Compreensões de lista e de dicionário",
+    "Exceções: try, except, else, finally e raise",
+    "Arquivos de texto, CSV e JSON com with open",
+    "Módulos e import; biblioteca padrão (math, random, pathlib, datetime)",
+    "Depuração: ler o traceback, breakpoints no VS Code e pdb"
+   ],
+   "p": "Controle de gastos no terminal: cadastra despesas, salva em JSON e mostra o total por categoria e por mês",
+   "r": [
+    [
+     "Curso em Vídeo: Python, Mundos 1 a 3 (Gustavo Guanabara)",
+     "https://www.cursoemvideo.com",
+     "grátis · português"
+    ],
+    [
+     "Pense em Python (Allen Downey)",
+     "https://penseallen.github.io/PensePython2e/",
+     "grátis · português"
+    ],
+    [
+     "Tutorial oficial do Python",
+     "https://docs.python.org/pt-br/3/tutorial/",
+     "grátis · português"
+    ],
+    [
+     "Lista de Exercícios da Python Brasil",
+     "https://wiki.python.org.br/ListaDeExercicios",
+     "grátis · português"
+    ],
+    [
+     "Exercism: trilha Python",
+     "https://exercism.org/tracks/python",
+     "grátis · com mentoria"
+    ]
+   ],
+   "ok": "Você resolve as seções 1 a 6 da Lista de Exercícios da Python Brasil sem olhar soluções."
+  },
+  {
+   "id": "GIT-01",
+   "f": 1,
+   "t": "git",
+   "n": "Git e GitHub: fundamentos",
+   "h": 20,
+   "w": "Git guarda o histórico de todo código que você escrever e é a sua rede de segurança. Começar cedo cria o hábito.",
+   "k": [
+    "Controle de versão; repositório, working tree, staging area e commit",
+    "git init, status, add, commit, log, diff e show",
+    ".gitignore",
+    "Desfazer: restore, commit --amend e revert",
+    "Branches: branch, switch e merge; fast-forward e merge commit",
+    "Resolver conflitos de merge à mão",
+    "Remotos: clone, remote, fetch, pull e push",
+    "GitHub: repositório, chave SSH, README em Markdown e issues",
+    "Commits pequenos com boas mensagens (Conventional Commits)"
+   ],
+   "p": "Publicar o controle de gastos no GitHub com README, histórico limpo e uma branch de funcionalidade mesclada",
+   "r": [
+    [
+     "Pro Git, caps. 1–3",
+     "https://git-scm.com/book/pt-br/v2",
+     "grátis · português"
+    ],
+    [
+     "Learn Git Branching",
+     "https://learngitbranching.js.org/?locale=pt_BR",
+     "grátis · interativo"
+    ],
+    [
+     "Curso em Vídeo: Git e GitHub",
+     "https://www.cursoemvideo.com",
+     "grátis · português"
+    ],
+    [
+     "Conventional Commits",
+     "https://www.conventionalcommits.org/pt-br/",
+     "especificação"
+    ]
+   ],
+   "ok": "Você cria de propósito um conflito entre duas branches e o resolve sem pesquisar."
+  },
+  {
+   "id": "PY-02",
+   "f": 1,
+   "t": "py",
+   "n": "Python intermediário",
+   "h": 60,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "Orientação a objetos: classes, instâncias, atributos, métodos e self",
+    "Herança, composição e polimorfismo; quando preferir composição",
+    "Métodos especiais: __init__, __repr__, __eq__, __len__, __iter__",
+    "dataclasses e enum",
+    "Ambientes virtuais (venv, uv) e pyproject.toml",
+    "Type hints e checagem com mypy",
+    "Iteradores, geradores e yield",
+    "Funções de primeira classe, closures e decoradores",
+    "Context managers próprios",
+    "Testes com pytest: assert, fixtures e parametrize",
+    "logging, argparse e expressões regulares",
+    "Consumo de APIs HTTP com httpx ou requests"
+   ],
+   "p": "CLI que consulta uma API pública (IBGE, previsão do tempo), com type hints, testes pytest e instalação via uv",
+   "r": [
+    [
+     "Python Fluente, 2ª ed. (Luciano Ramalho), partes I e II",
+     "https://pythonfluente.com",
+     "grátis online · português"
+    ],
+    [
+     "Python Crash Course (Eric Matthes), parte I",
+     null,
+     "livro"
+    ],
+    [
+     "Documentação do pytest",
+     "https://docs.pytest.org",
+     "referência"
+    ],
+    [
+     "Documentação do uv",
+     "https://docs.astral.sh/uv/",
+     "referência"
+    ]
+   ],
+   "ok": "Seu projeto passa no mypy --strict e tem testes para os casos de erro."
+  },
+  {
+   "id": "PY-03",
+   "f": 1,
+   "t": "py",
+   "n": "Python para dados",
+   "h": 30,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "Notebooks Jupyter no VS Code",
+    "NumPy: arrays, shape, broadcasting e vetorização",
+    "Pandas: Series e DataFrame; ler CSV e Excel; filtros, groupby, merge e pivot",
+    "Limpeza de dados: valores ausentes, tipos e datas",
+    "Matplotlib: linha, barras, histograma e dispersão",
+    "Estatística descritiva no Pandas: média, mediana, desvio padrão e correlação",
+    "Scikit-learn: treino e teste, regressão linear, classificação e métricas",
+    "SciPy: noções de estatística e otimização"
+   ],
+   "p": "Analisar o seu registro-questoes.csv dos concursos: taxa de acerto por matéria e por semana, com gráficos",
+   "r": [
+    [
+     "Python for Data Analysis, 3ª ed. (Wes McKinney)",
+     "https://wesmckinney.com/book/",
+     "grátis online"
+    ],
+    [
+     "Kaggle Learn: Pandas e Intro to Machine Learning",
+     "https://www.kaggle.com/learn",
+     "grátis · exercícios no navegador"
+    ],
+    [
+     "Documentação do scikit-learn",
+     "https://scikit-learn.org/stable/user_guide.html",
+     "referência"
+    ]
+   ],
+   "ok": "Você responde perguntas sobre um CSV desconhecido em poucos minutos, com groupby e gráficos."
+  },
+  {
+   "id": "HW-01",
+   "f": 1,
+   "t": "ele",
+   "n": "Eletricidade básica",
+   "h": 40,
+   "w": "Todo computador é um circuito. Tensão, corrente e resistência são o alfabeto da trilha de hardware.",
+   "k": [
+    "Carga, corrente (A), tensão (V), resistência (Ω) e potência (W)",
+    "Lei de Ohm (V = R·I) e potência (P = V·I)",
+    "Circuitos em série e em paralelo; resistência equivalente",
+    "Divisor de tensão e divisor de corrente",
+    "Leis de Kirchhoff: correntes nos nós e tensões nas malhas",
+    "Fontes de tensão, baterias, terra (GND) e referência",
+    "Código de cores de resistores e série E12",
+    "LED: polaridade, queda de tensão e resistor limitador",
+    "Protoboard: como as trilhas se ligam por dentro",
+    "Multímetro: medir tensão, corrente, resistência e continuidade com segurança",
+    "Segurança: nada de rede elétrica (127/220 V) nem bateria de lítio sem proteção"
+   ],
+   "p": "Montar 5 circuitos com LEDs (série, paralelo e divisor), calculando tudo antes e conferindo com o multímetro",
+   "r": [
+    [
+     "All About Circuits: vol. I (DC)",
+     "https://www.allaboutcircuits.com/textbook/",
+     "grátis · livro online"
+    ],
+    [
+     "Khan Academy: circuitos elétricos",
+     "https://pt.khanacademy.org",
+     "grátis · português"
+    ],
+    [
+     "Make: Electronics (Charles Platt), experimentos 1–10",
+     null,
+     "livro prático"
+    ],
+    [
+     "Simulador de circuitos Falstad",
+     "https://www.falstad.com/circuit/",
+     "grátis · no navegador"
+    ],
+    [
+     "Tinkercad Circuits",
+     "https://www.tinkercad.com/circuits",
+     "grátis · simulador"
+    ]
+   ],
+   "ok": "Você calcula a corrente em cada ramo de um circuito misto e a medição bate com o cálculo com erro de até 5%."
+  },
+  {
+   "id": "C-01",
+   "f": 2,
+   "t": "c",
+   "n": "C: fundamentos",
+   "h": 60,
+   "w": "C mostra o que as outras linguagens escondem: memória, endereços e bytes. Sistemas operacionais, firmware e o próprio interpretador do Python são escritos em C.",
+   "k": [
+    "Do código ao executável: pré-processador, compilador, montador e ligador (gcc -E, -S, -c)",
+    "gcc e clang com -Wall -Wextra -std=c17 -g",
+    "Tipos e tamanhos: char, int, long, float, double, sizeof e stdint.h (uint8_t, int32_t)",
+    "Operadores bit a bit (&, |, ^, ~, <<, >>) e máscaras",
+    "Controle de fluxo, funções, protótipos e passagem por valor",
+    "Arrays e strings terminadas no caractere nulo ('\\0')",
+    "Ponteiros: endereço (&), desreferência (*) e aritmética de ponteiros",
+    "Ponteiros e arrays; ponteiro para ponteiro; argv",
+    "struct, enum, union e typedef",
+    "printf, scanf, fgets; arquivos com fopen, fread e fwrite",
+    "Pré-processador: #include, #define, macros e include guards"
+   ],
+   "p": "Reimplementar strlen, strcpy, strcmp e atoi, e escrever um wc que conta linhas, palavras e bytes de um arquivo",
+   "r": [
+    [
+     "C Programming: A Modern Approach (K. N. King), caps. 1–17",
+     "http://knking.com/books/c2/",
+     "livro · o melhor para iniciantes"
+    ],
+    [
+     "CS50x, semanas 1–5 (Harvard)",
+     "https://cs50.harvard.edu/x/",
+     "grátis · vídeo e exercícios"
+    ],
+    [
+     "Beej's Guide to C Programming",
+     "https://beej.us/guide/bgc/",
+     "grátis"
+    ],
+    [
+     "Compiler Explorer",
+     "https://godbolt.org",
+     "veja o assembly do seu código"
+    ]
+   ],
+   "ok": "Você desenha à mão a memória (endereços e valores) de um programa com ponteiro para ponteiro e acerta."
+  },
+  {
+   "id": "C-02",
+   "f": 2,
+   "t": "c",
+   "n": "C: memória e ferramentas",
+   "h": 50,
+   "k": [
+    "Layout de memória do processo: text, data, bss, heap e stack",
+    "Alocação dinâmica: malloc, calloc, realloc e free",
+    "Erros clássicos: vazamento, double free, use-after-free e buffer overflow",
+    "Comportamento indefinido e por que ele é perigoso",
+    "gdb: breakpoints, step, next, backtrace, print e watch",
+    "Valgrind, AddressSanitizer e UndefinedBehaviorSanitizer",
+    "Projetos com vários .c e .h; static e extern",
+    "Make e Makefile; CMake básico",
+    "Bibliotecas estáticas (.a) e dinâmicas (.so); ldd",
+    "Ponteiros para função, void* e callbacks (qsort)",
+    "Uso correto de const"
+   ],
+   "p": "Lista encadeada genérica com void* e callbacks, compilada por Makefile e sem nenhum erro no AddressSanitizer",
+   "r": [
+    [
+     "C Programming: A Modern Approach, caps. 17–26",
+     null,
+     "livro"
+    ],
+    [
+     "Modern C (Jens Gustedt)",
+     "https://gustedt.gitlabpages.inria.fr/modern-c/",
+     "grátis"
+    ],
+    [
+     "Expert C Programming: Deep C Secrets (Peter van der Linden)",
+     null,
+     "livro"
+    ],
+    [
+     "Valgrind: Quick Start",
+     "https://valgrind.org/docs/manual/quick-start.html",
+     "referência"
+    ]
+   ],
+   "ok": "Você acha um use-after-free num programa de 300 linhas usando só gdb e AddressSanitizer."
+  },
+  {
+   "id": "HW-02",
+   "f": 2,
+   "t": "arq",
+   "n": "Do NAND ao computador (Nand2Tetris, parte I)",
+   "h": 60,
+   "w": "Você constrói um computador inteiro num simulador, porta por porta. Depois disso, CPU e memória deixam de ser caixas-pretas.",
+   "k": [
+    "Portas lógicas a partir da NAND: NOT, AND, OR, XOR, MUX e DMUX",
+    "Aritmética binária em hardware: meio somador, somador completo e somador de 16 bits",
+    "ALU: como cada operação vira um conjunto de sinais de controle",
+    "Lógica sequencial: clock, flip-flop D, registrador e bit de memória",
+    "RAM feita de registradores; contador de programa (PC)",
+    "Arquitetura de von Neumann e a CPU Hack",
+    "Linguagem de máquina e assembly do Hack",
+    "Montador (assembler) escrito em Python"
+   ],
+   "p": "Concluir os projetos 1 a 6 do Nand2Tetris, com o montador do projeto 6 escrito em Python",
+   "r": [
+    [
+     "Nand2Tetris",
+     "https://www.nand2tetris.org",
+     "grátis · ferramentas e projetos"
+    ],
+    [
+     "Build a Modern Computer from First Principles (Coursera), parte I",
+     "https://www.coursera.org/learn/build-a-computer",
+     "grátis para assistir"
+    ],
+    [
+     "The Elements of Computing Systems, 2ª ed. (Nisan e Schocken)",
+     null,
+     "livro"
+    ]
+   ],
+   "ok": "Seu montador traduz o Pong.asm do curso e o binário gerado roda no emulador da CPU Hack."
+  },
+  {
+   "id": "ALG-01",
+   "f": 3,
+   "t": "alg",
+   "n": "Complexidade e estruturas lineares",
+   "h": 50,
+   "s": [
+    "BB"
+   ],
+   "w": "É o que separa o código que funciona do código que funciona bem. Também é o centro das entrevistas técnicas.",
+   "k": [
+    "Notação Big-O, Ω e Θ; análise de laços aninhados",
+    "Recursão: caso base, pilha de chamadas e recursão de cauda",
+    "Arrays estáticos e dinâmicos (como a list do Python cresce)",
+    "Listas encadeadas simples e duplas",
+    "Pilhas, filas e deques",
+    "Tabelas hash: funções de hash, colisões (encadeamento e endereçamento aberto) e fator de carga",
+    "Busca sequencial e busca binária",
+    "Ordenações simples: bolha, seleção e inserção",
+    "Ordenações eficientes: merge sort, quick sort e heap sort; counting e radix sort",
+    "Estabilidade e ordenação in-place"
+   ],
+   "p": "Tabela hash em C com redimensionamento, comparada ao dict do Python em 1 milhão de inserções",
+   "r": [
+    [
+     "Entendendo Algoritmos (Aditya Bhargava)",
+     null,
+     "livro · português · comece por ele"
+    ],
+    [
+     "MIT 6.006: Introduction to Algorithms",
+     "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+     "grátis · aulas e listas"
+    ],
+    [
+     "VisuAlgo",
+     "https://visualgo.net",
+     "grátis · animações"
+    ],
+    [
+     "Algorithms, 4ª ed. (Sedgewick e Wayne)",
+     "https://algs4.cs.princeton.edu",
+     "livro · site com código"
+    ]
+   ],
+   "ok": "Você implementa merge sort e quick sort de memória e explica o pior caso de cada um."
+  },
+  {
+   "id": "ALG-02",
+   "f": 3,
+   "t": "alg",
+   "n": "Árvores, grafos e técnicas",
+   "h": 50,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "Árvores binárias e percursos (pré, em, pós-ordem e por nível)",
+    "Árvore binária de busca; balanceamento (AVL e rubro-negra, conceito)",
+    "Heap e fila de prioridade",
+    "Trie",
+    "Grafos: lista e matriz de adjacência",
+    "BFS e DFS; ordenação topológica",
+    "Caminho mínimo: Dijkstra (e Bellman-Ford, conceito)",
+    "Union-Find; árvore geradora mínima (Kruskal e Prim)",
+    "Algoritmos gulosos",
+    "Programação dinâmica: memoização e tabulação",
+    "Backtracking, dois ponteiros e janela deslizante"
+   ],
+   "p": "Resolver labirintos lidos de arquivo com BFS e A*, desenhando o caminho no terminal",
+   "r": [
+    [
+     "Entendendo Algoritmos",
+     null,
+     "livro"
+    ],
+    [
+     "Algoritmos: Teoria e Prática (Cormen et al.)",
+     null,
+     "livro · referência"
+    ],
+    [
+     "NeetCode Roadmap",
+     "https://neetcode.io/roadmap",
+     "grátis · problemas em ordem"
+    ]
+   ],
+   "ok": "Você resolve 60% dos problemas médios do NeetCode 150 em até 40 minutos cada."
+  },
+  {
+   "id": "ALG-03",
+   "f": 3,
+   "t": "alg",
+   "n": "Prática contínua de problemas",
+   "h": 30,
+   "k": [
+    "Um problema por dia: Beecrowd em português, depois LeetCode",
+    "Lista NeetCode 150, por categoria",
+    "Ler soluções de outras pessoas depois de resolver",
+    "Registrar no Obsidian o padrão usado e o erro cometido"
+   ],
+   "p": "150 problemas resolvidos, cada um com o padrão e o erro anotados",
+   "r": [
+    [
+     "Beecrowd",
+     "https://judge.beecrowd.com",
+     "grátis · português"
+    ],
+    [
+     "NeetCode",
+     "https://neetcode.io",
+     "grátis"
+    ],
+    [
+     "LeetCode",
+     "https://leetcode.com",
+     "grátis"
+    ]
+   ],
+   "ok": "Você reconhece o padrão (hash, dois ponteiros, BFS, programação dinâmica…) ainda na leitura do enunciado."
+  },
+  {
+   "id": "HW-03",
+   "f": 3,
+   "t": "ele",
+   "n": "Eletrônica analógica",
+   "h": 50,
+   "w": "Todo processador é feito de transistores. Aqui você vê como uma chave controlada eletricamente vira lógica.",
+   "k": [
+    "Capacitores: carga, descarga e constante de tempo RC",
+    "Indutores e circuito RL (conceito)",
+    "Corrente alternada: frequência, período, valor eficaz (RMS) e fase",
+    "Impedância; filtros RC passa-baixa e passa-alta",
+    "Diodos: retificação, zener e LED",
+    "Transistor bipolar (BJT) como chave e como amplificador",
+    "MOSFET como chave: canal N e P, nível lógico, a base do CMOS",
+    "Amplificador operacional: comparador, seguidor, inversor e não inversor",
+    "Fontes: regulador linear (7805, AMS1117) e conversor chaveado (buck, boost)",
+    "CI 555 nos modos astável e monoestável",
+    "Simulação SPICE (LTspice ou Falstad)",
+    "Osciloscópio: base de tempo, trigger, frequência e forma de onda"
+   ],
+   "p": "Pisca-pisca com 555 (frequência calculada × medida) e acionamento de motor DC por MOSFET com diodo de proteção",
+   "r": [
+    [
+     "Practical Electronics for Inventors (Scherz e Monk)",
+     null,
+     "livro"
+    ],
+    [
+     "All About Circuits: vols. II (AC) e III (semicondutores)",
+     "https://www.allaboutcircuits.com/textbook/",
+     "grátis"
+    ],
+    [
+     "Fundamentos de Circuitos Elétricos (Alexander e Sadiku)",
+     null,
+     "livro · português"
+    ],
+    [
+     "The Art of Electronics (Horowitz e Hill)",
+     null,
+     "livro · referência avançada"
+    ]
+   ],
+   "ok": "Você explica por que um MOSFET de nível lógico pode ser ligado direto num pino de 3,3 V e um MOSFET comum não."
+  },
+  {
+   "id": "WEB-01",
+   "f": 4,
+   "t": "web",
+   "n": "Como a web funciona, HTML e CSS",
+   "h": 40,
+   "k": [
+    "Cliente, servidor, URL e DNS; requisição e resposta HTTP",
+    "Métodos (GET, POST, PUT, DELETE), códigos de status, cabeçalhos e cookies",
+    "DevTools do navegador: Elements, Network e Console",
+    "HTML semântico: estrutura, títulos, listas, links, imagens, tabelas e formulários",
+    "Acessibilidade: texto alternativo, rótulos, contraste e navegação por teclado",
+    "CSS: seletores, especificidade, cascata e herança",
+    "Box model, unidades (px, rem, %, vw), display e position",
+    "Flexbox e Grid",
+    "Responsividade: media queries e mobile first",
+    "Variáveis CSS e temas claro e escuro"
+   ],
+   "p": "Recriar uma página real de que você goste, responsiva, publicada no GitHub Pages",
+   "r": [
+    [
+     "MDN Web Docs",
+     "https://developer.mozilla.org/pt-BR/",
+     "grátis · referência"
+    ],
+    [
+     "The Odin Project: Foundations",
+     "https://www.theodinproject.com",
+     "grátis · currículo completo"
+    ],
+    [
+     "Flexbox Froggy",
+     "https://flexboxfroggy.com/#pt-br",
+     "grátis · jogo"
+    ],
+    [
+     "Grid Garden",
+     "https://cssgridgarden.com/#pt-br",
+     "grátis · jogo"
+    ],
+    [
+     "web.dev: Learn CSS",
+     "https://web.dev/learn/css",
+     "grátis"
+    ]
+   ],
+   "ok": "Você monta qualquer layout comum de site com Flexbox e Grid, sem framework de CSS."
+  },
+  {
+   "id": "WEB-02",
+   "f": 4,
+   "t": "web",
+   "n": "JavaScript",
+   "h": 60,
+   "k": [
+    "Tipos, let e const, coerção; === e ==",
+    "Funções, arrow functions, escopo, closures e hoisting",
+    "this, objetos, protótipos e classes",
+    "Métodos de array: map, filter, reduce, find, some e sort",
+    "Desestruturação, spread/rest, ?. e ??",
+    "Módulos ES (import e export)",
+    "DOM: selecionar, criar e alterar elementos; eventos e delegação",
+    "Event loop: pilha, fila de tarefas e microtarefas",
+    "Callbacks, Promises e async/await; tratamento de erros",
+    "fetch, JSON e localStorage",
+    "Node.js e npm: scripts, package.json e dependências"
+   ],
+   "p": "App de tarefas sem framework (filtros e persistência local) e um painel que consome uma API pública com fetch",
+   "r": [
+    [
+     "javascript.info",
+     "https://javascript.info",
+     "grátis · tem tradução parcial"
+    ],
+    [
+     "Eloquent JavaScript",
+     "https://eloquentjavascript.net",
+     "grátis · livro"
+    ],
+    [
+     "The Odin Project: JavaScript",
+     "https://www.theodinproject.com",
+     "grátis"
+    ],
+    [
+     "You Don't Know JS Yet (Kyle Simpson)",
+     "https://github.com/getify/You-Dont-Know-JS",
+     "grátis · aprofundamento"
+    ]
+   ],
+   "ok": "Você prevê a ordem de saída de um código que mistura setTimeout, Promise e await."
+  },
+  {
+   "id": "WEB-03",
+   "f": 4,
+   "t": "web",
+   "n": "TypeScript",
+   "h": 40,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "Por que tipos estáticos; tsc e tsconfig em modo strict",
+    "Primitivos, arrays, tuplas e objetos; inferência",
+    "Union, intersection e tipos literais",
+    "Narrowing: typeof, in, instanceof e uniões discriminadas",
+    "interface e type; propriedades opcionais e readonly",
+    "Generics em funções e classes; restrições com extends",
+    "Utility types: Partial, Required, Pick, Omit, Record e ReturnType",
+    "keyof, typeof, tipos indexados, mapped types e conditional types",
+    "any, unknown e never",
+    "Validar dados externos em tempo de execução (Zod)",
+    "Arquivos de declaração (.d.ts) e pacotes @types"
+   ],
+   "p": "Migrar o app de tarefas para TypeScript strict e resolver 20 desafios fáceis e médios do type-challenges",
+   "r": [
+    [
+     "TypeScript Handbook",
+     "https://www.typescriptlang.org/docs/handbook/intro.html",
+     "grátis · oficial"
+    ],
+    [
+     "Total TypeScript (Matt Pocock)",
+     "https://www.totaltypescript.com",
+     "tutoriais grátis"
+    ],
+    [
+     "type-challenges",
+     "https://github.com/type-challenges/type-challenges",
+     "grátis · exercícios"
+    ],
+    [
+     "Zod",
+     "https://zod.dev",
+     "documentação"
+    ]
+   ],
+   "ok": "Seu projeto compila em strict sem nenhum any."
+  },
+  {
+   "id": "WEB-04",
+   "f": 4,
+   "t": "web",
+   "n": "React",
+   "h": 70,
+   "k": [
+    "Componentes, JSX e props",
+    "Estado com useState, eventos, renderização condicional, listas e key",
+    "Formulários controlados",
+    "Pensar em React: dividir a interface, decidir onde mora o estado, elevar o estado",
+    "useEffect para sincronizar com sistemas externos, e quando não usar",
+    "useRef, useContext, useReducer e hooks próprios",
+    "Rotas com React Router",
+    "Busca de dados e cache com TanStack Query",
+    "Estado global com Context ou Zustand",
+    "Estilos com CSS Modules ou Tailwind",
+    "Testes com Vitest e Testing Library",
+    "Desempenho: memo, useMemo, useCallback e React Compiler",
+    "Next.js e Server Components (noções)"
+   ],
+   "p": "Quadro kanban com rotas, arrastar e soltar, persistência e testes (ligado à sua API na Fase 5)",
+   "r": [
+    [
+     "react.dev: Aprenda React",
+     "https://pt-br.react.dev/learn",
+     "grátis · oficial · com desafios"
+    ],
+    [
+     "The Odin Project: React",
+     "https://www.theodinproject.com",
+     "grátis"
+    ],
+    [
+     "TanStack Query",
+     "https://tanstack.com/query/latest",
+     "documentação"
+    ],
+    [
+     "Testing Library",
+     "https://testing-library.com",
+     "documentação"
+    ]
+   ],
+   "ok": "Você resolve os desafios da documentação oficial sem ver a solução."
+  },
+  {
+   "id": "WEB-05",
+   "f": 4,
+   "t": "web",
+   "n": "Ferramentas do front-end",
+   "h": 15,
+   "k": [
+    "npm e pnpm; versionamento semântico e lockfile",
+    "Vite: servidor de desenvolvimento e build",
+    "ESLint e Prettier",
+    "Variáveis de ambiente no front",
+    "Deploy: GitHub Pages, Netlify ou Vercel",
+    "Testes de ponta a ponta com Playwright"
+   ],
+   "p": "Um comando que roda lint, testes e build do kanban",
+   "r": [
+    [
+     "Vite",
+     "https://vite.dev/guide/",
+     "documentação"
+    ],
+    [
+     "Playwright",
+     "https://playwright.dev",
+     "documentação"
+    ]
+   ],
+   "ok": "O kanban está no ar com um teste de ponta a ponta que cria e move um cartão."
+  },
+  {
+   "id": "HW-04",
+   "f": 4,
+   "t": "ele",
+   "n": "Eletrônica digital na protoboard",
+   "h": 40,
+   "k": [
+    "Famílias lógicas TTL e CMOS (74HC); níveis lógicos de 5 V e 3,3 V",
+    "Resistores de pull-up e pull-down; entradas flutuantes",
+    "Debounce de botões, por RC e por software",
+    "Portas lógicas em CI: 74HC00, 04, 08, 32 e 86",
+    "Decodificadores, multiplexadores e display de 7 segmentos",
+    "Latch e flip-flop; flip-flops D e JK",
+    "Contadores e divisores de frequência",
+    "Registrador de deslocamento 74HC595",
+    "Geração de clock com 555 e com cristal",
+    "Máquinas de estados finitos no papel e no circuito",
+    "Simulação no Digital (hneemann) ou no Logisim Evolution"
+   ],
+   "p": "Contador de 0 a 9 com display de 7 segmentos, clock por 555 e botão de reset com debounce",
+   "r": [
+    [
+     "Ben Eater: computador de 8 bits na protoboard",
+     "https://eater.net/8bit",
+     "grátis · vídeos"
+    ],
+    [
+     "Sistemas Digitais (Ronald Tocci)",
+     null,
+     "livro · português"
+    ],
+    [
+     "Digital Design and Computer Architecture (Harris e Harris), caps. 1–3",
+     null,
+     "livro"
+    ],
+    [
+     "Digital (simulador)",
+     "https://github.com/hneemann/Digital",
+     "grátis"
+    ]
+   ],
+   "ok": "Você projeta uma máquina de estados simples, como um semáforo, e a monta em CI ou no simulador."
+  },
+  {
+   "id": "BD-01",
+   "f": 5,
+   "t": "back",
+   "n": "Bancos relacionais e SQL",
+   "h": 60,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "SGBD; modelo relacional; tabelas, chaves primárias e estrangeiras",
+    "Modelagem entidade-relacionamento e cardinalidade",
+    "Normalização: 1FN, 2FN, 3FN e FNBC",
+    "DDL: CREATE, ALTER e DROP; tipos e constraints",
+    "DML: INSERT, UPDATE, DELETE e SELECT",
+    "WHERE, ORDER BY, LIMIT, DISTINCT, LIKE, IN, BETWEEN e NULL",
+    "JOINs: inner, left, right, full e self join",
+    "Agregação: GROUP BY, HAVING, COUNT, SUM e AVG",
+    "Subconsultas, CTEs (WITH) e funções de janela (OVER, PARTITION BY)",
+    "Índices B-tree: quando ajudam e quando atrapalham; EXPLAIN ANALYZE",
+    "Transações, ACID e níveis de isolamento",
+    "PostgreSQL na prática (psql) e SQLite"
+   ],
+   "p": "Banco de uma biblioteca (livros, leitores, empréstimos) com dados falsos e 40 consultas, incluindo funções de janela",
+   "r": [
+    [
+     "SQLBolt",
+     "https://sqlbolt.com",
+     "grátis · interativo"
+    ],
+    [
+     "Select Star SQL",
+     "https://selectstarsql.com",
+     "grátis · interativo"
+    ],
+    [
+     "Tutorial do PostgreSQL",
+     "https://www.postgresql.org/docs/current/tutorial.html",
+     "oficial"
+    ],
+    [
+     "Use The Index, Luke",
+     "https://use-the-index-luke.com",
+     "grátis · índices"
+    ],
+    [
+     "CMU 15-445: Database Systems",
+     "https://15445.courses.cs.cmu.edu",
+     "grátis · internals, avançado"
+    ]
+   ],
+   "ok": "Você escreve consultas com 3 JOINs e GROUP BY sem errar a cardinalidade, e sabe ler um EXPLAIN."
+  },
+  {
+   "id": "BD-02",
+   "f": 5,
+   "t": "back",
+   "n": "NoSQL e cache",
+   "h": 15,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "Tipos: documento (MongoDB), chave-valor (Redis), colunar e grafo",
+    "Modelagem em documentos: embutir ou referenciar",
+    "Redis como cache: TTL e invalidação",
+    "Teorema CAP e consistência eventual",
+    "Data warehouse e modelagem dimensional (fato e dimensão), noções"
+   ],
+   "p": "Pôr cache Redis numa consulta lenta da sua API e medir o ganho",
+   "r": [
+    [
+     "MongoDB University",
+     "https://learn.mongodb.com",
+     "grátis"
+    ],
+    [
+     "Documentação do Redis",
+     "https://redis.io/docs/latest/",
+     "referência"
+    ]
+   ],
+   "ok": "Você justifica, num caso concreto, por que escolheu SQL ou NoSQL."
+  },
+  {
+   "id": "RED-01",
+   "f": 5,
+   "t": "back",
+   "n": "Redes de computadores",
+   "h": 40,
+   "s": [
+    "MP"
+   ],
+   "k": [
+    "Modelos OSI e TCP/IP: o papel de cada camada",
+    "Ethernet, endereço MAC e switch; Wi-Fi",
+    "IPv4 e IPv6; máscara, CIDR e sub-redes",
+    "Roteamento, gateway, ARP e NAT",
+    "TCP e UDP: handshake, portas, controle de fluxo e de congestionamento",
+    "DNS (registros A, AAAA, CNAME, MX) e DHCP",
+    "HTTP/1.1, HTTP/2 e HTTP/3; TLS e certificados",
+    "WebSocket",
+    "Ferramentas: ping, traceroute, dig, curl, ss, tcpdump e Wireshark",
+    "Sockets em C: socket, bind, listen, accept e connect"
+   ],
+   "p": "Servidor HTTP mínimo em C que serve arquivos de uma pasta, com o tráfego analisado no Wireshark",
+   "r": [
+    [
+     "Redes de Computadores e a Internet (Kurose e Ross)",
+     "https://gaia.cs.umass.edu/kurose_ross/",
+     "livro · português · labs de Wireshark"
+    ],
+    [
+     "Beej's Guide to Network Programming",
+     "https://beej.us/guide/bgnet/",
+     "grátis"
+    ],
+    [
+     "Wireshark",
+     "https://www.wireshark.org",
+     "grátis"
+    ]
+   ],
+   "ok": "Você explica, camada por camada, tudo o que passa pela rede entre digitar uma URL e a página carregar."
+  },
+  {
+   "id": "BACK-01",
+   "f": 5,
+   "t": "back",
+   "n": "APIs e back-end (Node com TypeScript, e Python)",
+   "h": 65,
+   "k": [
+    "Cliente-servidor e REST: recursos, verbos, status e idempotência",
+    "Servidor Node com Fastify ou Express, em TypeScript",
+    "FastAPI em Python (async e Pydantic)",
+    "Validação de entrada e erros padronizados",
+    "Acesso a banco: SQL puro, query builder e ORM (Drizzle ou Prisma; SQLAlchemy)",
+    "Migrations",
+    "Autenticação: sessões e cookies, JWT, OAuth 2 (noções); senhas com argon2 ou bcrypt",
+    "Autorização por papéis",
+    "Paginação, filtros e upload de arquivos",
+    "Testes de integração com banco real",
+    "Documentação OpenAPI/Swagger",
+    "Segurança: OWASP Top 10 (injeção, XSS, CSRF), CORS e rate limiting",
+    "Logs estruturados e variáveis de ambiente"
+   ],
+   "p": "API do kanban (usuários, quadros, cartões) com autenticação, testes e OpenAPI, usada pelo front da Fase 4",
+   "r": [
+    [
+     "Fastify",
+     "https://fastify.dev/docs/latest/",
+     "documentação"
+    ],
+    [
+     "FastAPI",
+     "https://fastapi.tiangolo.com/pt/",
+     "documentação · português"
+    ],
+    [
+     "OWASP Top 10",
+     "https://owasp.org/www-project-top-ten/",
+     "referência"
+    ],
+    [
+     "The Odin Project: NodeJS",
+     "https://www.theodinproject.com",
+     "grátis"
+    ]
+   ],
+   "ok": "Outra pessoa consegue usar sua API lendo só a documentação OpenAPI."
+  },
+  {
+   "id": "PY-04",
+   "f": 5,
+   "t": "py",
+   "n": "Python avançado",
+   "h": 30,
+   "k": [
+    "Modelo de dados do Python e protocolos",
+    "Concorrência: threading, multiprocessing e asyncio; o GIL e o Python sem GIL (3.13+)",
+    "Descritores, propriedades e metaprogramação básica",
+    "Profiling com cProfile e otimização",
+    "Empacotamento e publicação no PyPI",
+    "Como o CPython chama código C (noções de extensões)"
+   ],
+   "p": "Coletor assíncrono que baixa 500 páginas com asyncio e httpx, comparado com a versão sequencial",
+   "r": [
+    [
+     "Python Fluente, partes III a V",
+     "https://pythonfluente.com",
+     "grátis online"
+    ],
+    [
+     "Documentação do asyncio",
+     "https://docs.python.org/pt-br/3/library/asyncio.html",
+     "oficial"
+    ]
+   ],
+   "ok": "Você explica quando threads ajudam em Python e quando só processos resolvem."
+  },
+  {
+   "id": "HW-05",
+   "f": 5,
+   "t": "emb",
+   "n": "Microcontroladores",
+   "h": 60,
+   "w": "É onde código e circuito se encontram: o seu C liga e desliga pinos de verdade.",
+   "k": [
+    "Microcontrolador e microprocessador; Flash, SRAM e periféricos no mesmo chip",
+    "Arduino: GPIO, digitalRead, digitalWrite e analogRead",
+    "PWM, ADC e resolução",
+    "Interrupções e timers",
+    "Bare metal no ATmega328P: registradores DDRx, PORTx e PINx lidos no datasheet",
+    "Comunicação serial: UART, I²C e SPI (sinais, endereços e clock)",
+    "Sensores e atuadores: temperatura, distância, servo e display OLED",
+    "ESP32: Wi-Fi, HTTP, MQTT e FreeRTOS básico (tarefas e filas)",
+    "Raspberry Pi Pico: SDK em C e PIO",
+    "STM32 (ARM Cortex-M): HAL e depois registradores; startup, linker script e tabela de vetores",
+    "Analisador lógico com PulseView para ver o protocolo",
+    "Economia de energia: modos de sleep"
+   ],
+   "p": "Estação meteorológica com ESP32 que envia leituras para a sua API a cada minuto",
+   "r": [
+    [
+     "Making Embedded Systems, 2ª ed. (Elecia White)",
+     null,
+     "livro"
+    ],
+    [
+     "Wokwi",
+     "https://wokwi.com",
+     "grátis · simulador de Arduino, ESP32 e Pico"
+    ],
+    [
+     "Documentação do Arduino",
+     "https://docs.arduino.cc",
+     "oficial"
+    ],
+    [
+     "ESP-IDF",
+     "https://docs.espressif.com/projects/esp-idf/",
+     "oficial"
+    ],
+    [
+     "sigrok / PulseView",
+     "https://sigrok.org",
+     "grátis"
+    ]
+   ],
+   "ok": "Você faz um LED piscar no ATmega328P escrevendo só em registradores, sem a biblioteca do Arduino."
+  },
+  {
+   "id": "GIT-02",
+   "f": 6,
+   "t": "git",
+   "n": "Git avançado e colaboração",
+   "h": 20,
+   "k": [
+    "Rebase e rebase interativo para limpar o histórico local",
+    "cherry-pick, stash e worktree",
+    "reset (soft, mixed, hard) e revert",
+    "reflog para recuperar commits “perdidos”",
+    "bisect para achar o commit que quebrou algo",
+    "Tags, releases e versionamento semântico",
+    "Fluxos: GitHub Flow, trunk-based e Git Flow",
+    "Pull requests, revisão de código e proteção de branch",
+    "Internals: objetos blob, tree e commit; o diretório .git",
+    "Hooks (pre-commit) e commits assinados"
+   ],
+   "p": "Ter um pull request aceito num projeto open source",
+   "r": [
+    [
+     "Pro Git, caps. 3, 7 e 10",
+     "https://git-scm.com/book/pt-br/v2",
+     "grátis · português"
+    ],
+    [
+     "Oh My Git!",
+     "https://ohmygit.org",
+     "grátis · jogo"
+    ],
+    [
+     "Git from the Bottom Up",
+     "https://jwiegley.github.io/git-from-the-bottom-up/",
+     "grátis"
+    ],
+    [
+     "Good First Issue",
+     "https://goodfirstissue.dev",
+     "projetos que aceitam iniciantes"
+    ]
+   ],
+   "ok": "Você recupera uma branch apagada pelo reflog e acha um bug com git bisect."
+  },
+  {
+   "id": "DOCK-01",
+   "f": 6,
+   "t": "docker",
+   "n": "Docker",
+   "h": 40,
+   "k": [
+    "Container e máquina virtual; imagem e camada",
+    "docker run, ps, logs, exec, stop e rm; ciclo de vida",
+    "Dockerfile: FROM, RUN, COPY, WORKDIR, ENV, EXPOSE; CMD e ENTRYPOINT",
+    "Cache de build, ordem das instruções e .dockerignore",
+    "Multi-stage builds e imagens pequenas (slim, alpine, distroless)",
+    "Volumes e bind mounts; persistência do banco",
+    "Redes: bridge, portas e DNS interno entre containers",
+    "Docker Compose: vários serviços, depends_on, healthcheck e perfis",
+    "Variáveis de ambiente e segredos",
+    "Segurança: usuário não root e varredura de imagens",
+    "Registries: Docker Hub e GitHub Container Registry",
+    "Por baixo dos panos: namespaces, cgroups e overlayfs; Podman"
+   ],
+   "p": "Front, API, Postgres e Redis subindo com um único docker compose up, com healthchecks e volumes",
+   "r": [
+    [
+     "Docker: Get started e Guides",
+     "https://docs.docker.com/get-started/",
+     "oficial"
+    ],
+    [
+     "Docker Deep Dive (Nigel Poulton)",
+     null,
+     "livro"
+    ],
+    [
+     "Play with Docker",
+     "https://labs.play-with-docker.com",
+     "grátis · no navegador"
+    ]
+   ],
+   "ok": "Você reduz a imagem da sua API pela metade com multi-stage e explica cada camada."
+  },
+  {
+   "id": "OPS-01",
+   "f": 6,
+   "t": "docker",
+   "n": "CI/CD e entrega",
+   "h": 20,
+   "k": [
+    "GitHub Actions: workflows, jobs, matrix, cache e secrets",
+    "Pipeline: lint, testes, build e publicação da imagem",
+    "Dependabot e atualização de dependências",
+    "Deploy em VPS ou PaaS; HTTPS com proxy reverso (Caddy ou Nginx)",
+    "Observabilidade: logs, métricas e healthchecks",
+    "Kubernetes: pods, deployments e services (noções)"
+   ],
+   "p": "Cada push na main roda os testes e publica a imagem da API no GHCR",
+   "r": [
+    [
+     "GitHub Actions",
+     "https://docs.github.com/pt/actions",
+     "oficial · português"
+    ],
+    [
+     "Docker: CI/CD com GitHub Actions",
+     "https://docs.docker.com/build/ci/github-actions/",
+     "oficial"
+    ]
+   ],
+   "ok": "Um commit que quebra um teste é barrado antes do merge."
+  },
+  {
+   "id": "ARQ-01",
+   "f": 6,
+   "t": "arq",
+   "n": "Sistemas pela ótica do programador (CS:APP)",
+   "h": 80,
+   "w": "Se você ler um único livro de sistemas, que seja este: ele mostra o que o hardware faz com o seu código.",
+   "k": [
+    "Inteiros sem sinal e em complemento de dois; ponto flutuante IEEE 754",
+    "Assembly x86-64: registradores, mov, aritmética, condições e laços",
+    "Convenção de chamada, pilha e stack frames",
+    "Ler o assembly gerado pelo compilador (godbolt) com -O0 e -O2",
+    "Arrays, structs e alinhamento na memória",
+    "Buffer overflow e proteções (canário, ASLR, NX)",
+    "Otimização de programas e paralelismo de instrução",
+    "Hierarquia de memória, localidade e cache na prática",
+    "Ligação: símbolos, relocação e bibliotecas",
+    "Exceções, processos e sinais",
+    "Memória virtual e alocação dinâmica"
+   ],
+   "p": "Fazer os labs Data Lab, Bomb Lab e Malloc Lab",
+   "r": [
+    [
+     "Computer Systems: A Programmer's Perspective, 3ª ed. (Bryant e O'Hallaron)",
+     "https://csapp.cs.cmu.edu",
+     "livro · labs grátis no site"
+    ],
+    [
+     "CMU 15-213: aulas gravadas",
+     "https://www.youtube.com/results?search_query=CMU%2015-213%20Introduction%20to%20Computer%20Systems%20lecture",
+     "grátis · vídeo"
+    ],
+    [
+     "Compiler Explorer",
+     "https://godbolt.org",
+     "grátis"
+    ]
+   ],
+   "ok": "Você desarma a Bomb Lab lendo o assembly no gdb."
+  },
+  {
+   "id": "ARQ-02",
+   "f": 6,
+   "t": "arq",
+   "n": "Sistemas operacionais",
+   "h": 70,
+   "s": [
+    "MP"
+   ],
+   "k": [
+    "Processos, threads e troca de contexto",
+    "Chamadas de sistema; modo usuário e modo kernel",
+    "fork, exec, wait, pipes e sinais",
+    "Escalonamento: FIFO, round-robin, MLFQ; CFS e EEVDF no Linux",
+    "Concorrência: condição de corrida, mutex, semáforo, variável de condição e deadlock",
+    "Memória virtual: paginação, tabela de páginas, TLB, falta de página e swap",
+    "Sistemas de arquivos: inodes, diretórios, journaling e ext4",
+    "E/S, interrupções, DMA e drivers",
+    "Boot: UEFI, bootloader, kernel e init (systemd)",
+    "Virtualização e containers vistos do kernel"
+   ],
+   "p": "Mini-shell em C com pipes, redirecionamento e jobs, e uma syscall nova no xv6",
+   "r": [
+    [
+     "Operating Systems: Three Easy Pieces (OSTEP)",
+     "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+     "grátis · livro"
+    ],
+    [
+     "MIT 6.1810: Operating System Engineering (xv6)",
+     "https://pdos.csail.mit.edu/6.1810/",
+     "grátis · labs"
+    ],
+    [
+     "The Linux Programming Interface (Michael Kerrisk)",
+     "https://man7.org/tlpi/",
+     "livro · referência"
+    ]
+   ],
+   "ok": "Seu shell executa corretamente cat arquivo | grep x | wc -l > saida.txt."
+  },
+  {
+   "id": "JVM-01",
+   "f": 7,
+   "t": "jvm",
+   "n": "Java",
+   "h": 60,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "JDK, JVM e bytecode; javac e java",
+    "Tipos primitivos e objetos; wrappers e autoboxing",
+    "Classes, construtores, encapsulamento e static",
+    "Herança, interfaces, classes abstratas e polimorfismo",
+    "Exceções verificadas e não verificadas",
+    "Collections: List, Set, Map e Queue (ArrayList, HashMap, TreeMap…)",
+    "Generics e wildcards",
+    "Lambdas, interfaces funcionais e Streams",
+    "Optional, records, sealed classes e pattern matching",
+    "Concorrência: threads, ExecutorService, CompletableFuture e virtual threads",
+    "Maven ou Gradle; JUnit 5",
+    "Spring Boot (noções, opcional)"
+   ],
+   "p": "Sistema de biblioteca em Java com Streams, testes JUnit e build Gradle",
+   "r": [
+    [
+     "Java Programming I e II (MOOC.fi, Universidade de Helsinque)",
+     "https://java-programming.mooc.fi",
+     "grátis · exercícios corrigidos"
+    ],
+    [
+     "Use a Cabeça! Java",
+     null,
+     "livro · português"
+    ],
+    [
+     "Java Efetivo (Joshua Bloch)",
+     null,
+     "livro · português"
+    ]
+   ],
+   "ok": "Você conclui as 14 partes do MOOC.fi com todos os testes passando."
+  },
+  {
+   "id": "JVM-02",
+   "f": 7,
+   "t": "jvm",
+   "n": "Kotlin",
+   "h": 40,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "val e var, inferência, funções; if e when como expressões",
+    "Null safety: ?, ?., ?: e !!",
+    "Classes, data classes, object e companion object",
+    "Sealed classes e interfaces; enum",
+    "Funções de extensão e de ordem superior; lambdas",
+    "Coleções e sequências; let, apply, also, run e with",
+    "Generics e variância (in e out)",
+    "Coroutines: suspend, escopos, concorrência estruturada e dispatchers",
+    "Flow e StateFlow",
+    "Interoperabilidade com Java; Gradle Kotlin DSL"
+   ],
+   "p": "Reescrever o sistema de biblioteca em Kotlin idiomático, com coroutines na importação de dados",
+   "r": [
+    [
+     "Documentação do Kotlin",
+     "https://kotlinlang.org/docs/home.html",
+     "oficial"
+    ],
+    [
+     "Kotlin Koans",
+     "https://play.kotlinlang.org/koans",
+     "grátis · exercícios"
+    ],
+    [
+     "Kotlin in Action, 2ª ed.",
+     null,
+     "livro"
+    ],
+    [
+     "Atomic Kotlin (Bruce Eckel e Svetlana Isakova)",
+     null,
+     "livro"
+    ]
+   ],
+   "ok": "Você completa os Kotlin Koans e explica concorrência estruturada."
+  },
+  {
+   "id": "JVM-03",
+   "f": 7,
+   "t": "jvm",
+   "n": "Android com Jetpack Compose",
+   "h": 90,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "Android Studio, Gradle, estrutura do projeto, emulador e aparelho",
+    "Activity, ciclo de vida e mudanças de configuração",
+    "Jetpack Compose: composables, estado, recomposição, modificadores e layouts",
+    "Material 3, temas e listas (LazyColumn)",
+    "Navegação em Compose",
+    "ViewModel, fluxo de dados unidirecional e camadas de UI, domínio e dados",
+    "Room (SQLite) e DataStore",
+    "Rede com Retrofit ou Ktor Client; coroutines e Flow na UI",
+    "Injeção de dependência com Hilt",
+    "WorkManager, notificações e permissões",
+    "Testes unitários e de UI em Compose",
+    "Assinatura, AAB e publicação na Play Store"
+   ],
+   "p": "App Android offline-first do kanban, sincronizando com a sua API",
+   "r": [
+    [
+     "Android Basics with Compose",
+     "https://developer.android.com/courses/android-basics-compose/course",
+     "grátis · oficial"
+    ],
+    [
+     "Now in Android",
+     "https://github.com/android/nowinandroid",
+     "app de referência"
+    ],
+    [
+     "Codelabs Android",
+     "https://developer.android.com/get-started/codelabs",
+     "grátis"
+    ]
+   ],
+   "ok": "Seu app funciona sem internet e sincroniza quando a conexão volta."
+  },
+  {
+   "id": "RN-01",
+   "f": 7,
+   "t": "rn",
+   "n": "React Native com Expo",
+   "h": 70,
+   "s": [
+    "BB"
+   ],
+   "k": [
+    "O que muda do React web para o nativo",
+    "Componentes: View, Text, Image, ScrollView, FlatList e Pressable",
+    "StyleSheet e Flexbox (em coluna por padrão)",
+    "Expo: projeto, Expo Go e development builds",
+    "Navegação com Expo Router",
+    "Dados com TanStack Query; armazenamento com SQLite e SecureStore",
+    "APIs nativas: câmera, notificações e localização",
+    "Nova Arquitetura: JSI, Fabric e TurboModules; Hermes",
+    "Módulo nativo próprio em Kotlin",
+    "Desempenho de listas e animações (Reanimated)",
+    "Testes com Jest e Maestro; builds com EAS",
+    "Publicação nas lojas"
+   ],
+   "p": "Versão React Native do kanban, reaproveitando os tipos e as regras em TypeScript do front web",
+   "r": [
+    [
+     "React Native",
+     "https://reactnative.dev/docs/getting-started",
+     "oficial"
+    ],
+    [
+     "Expo: tutorial",
+     "https://docs.expo.dev/tutorial/introduction/",
+     "oficial · grátis"
+    ]
+   ],
+   "ok": "O mesmo pacote TypeScript de regras roda no web e no app."
+  },
+  {
+   "id": "ARQ-03",
+   "f": 7,
+   "t": "arq",
+   "n": "Processadores a fundo",
+   "h": 70,
+   "k": [
+    "ISA: CISC e RISC; x86-64, ARM e RISC-V",
+    "RISC-V RV32I: formatos de instrução e montagem à mão",
+    "Caminho de dados (datapath) e unidade de controle",
+    "Pipeline de 5 estágios; hazards de dados, de controle e estruturais; forwarding",
+    "Predição de desvios",
+    "Execução fora de ordem, superescalar e renomeação de registradores",
+    "SIMD: SSE/AVX e NEON",
+    "Multicore, coerência de cache (MESI) e modelo de memória",
+    "SMT (hyperthreading); núcleos de desempenho e de eficiência",
+    "GPU e o modelo SIMT (noções)",
+    "Energia, clock e temperatura; litografia, nós de processo, FinFET e GAA",
+    "Ataques de canal lateral: Spectre e Meltdown"
+   ],
+   "p": "Simulador RV32I em C que executa programas compilados com o gcc para RISC-V",
+   "r": [
+    [
+     "Organização e Projeto de Computadores, edição RISC-V (Patterson e Hennessy)",
+     null,
+     "livro · português"
+    ],
+    [
+     "Aulas de Onur Mutlu (ETH Zürich)",
+     "https://www.youtube.com/results?search_query=Onur%20Mutlu%20Digital%20Design%20and%20Computer%20Architecture",
+     "grátis · vídeo"
+    ],
+    [
+     "Digital Design and Computer Architecture: RISC-V Edition (Harris e Harris)",
+     null,
+     "livro"
+    ],
+    [
+     "Manuais de otimização de Agner Fog",
+     "https://www.agner.org/optimize/",
+     "grátis · microarquitetura"
+    ],
+    [
+     "Chips and Cheese",
+     "https://chipsandcheese.com",
+     "análises de processadores reais"
+    ]
+   ],
+   "ok": "Seu simulador roda um programa C de fatorial compilado de verdade."
+  },
+  {
+   "id": "ARQ-04",
+   "f": 7,
+   "t": "arq",
+   "n": "Memórias a fundo",
+   "h": 30,
+   "s": [
+    "MP"
+   ],
+   "k": [
+    "Hierarquia: registradores, L1, L2, L3, DRAM, SSD e HDD; latências típicas",
+    "SRAM (célula de 6 transistores) e DRAM (1 transistor e 1 capacitor, com refresh)",
+    "Organização da DRAM: canais, ranks, bancos, linhas, colunas e row buffer",
+    "Temporizações: CL, tRCD, tRP e tRAS; DDR4, DDR5 e LPDDR5; dual channel",
+    "ECC",
+    "Cache: linhas, mapeamento direto e associativo, políticas de escrita e substituição; misses (3 C)",
+    "ROM, EEPROM, Flash NOR e NAND; SLC, MLC, TLC e QLC",
+    "SSD: controladora, FTL, wear leveling e TRIM; NVMe e SATA",
+    "HBM e memória de GPU (noções)"
+   ],
+   "p": "Benchmark em C que mede a latência de L1, L2, L3 e RAM (pointer chasing), com gráfico em Python",
+   "r": [
+    [
+     "What Every Programmer Should Know About Memory (Ulrich Drepper)",
+     "https://akkadia.org/drepper/cpumemory.pdf",
+     "grátis · PDF"
+    ],
+    [
+     "CS:APP, cap. 6",
+     null,
+     "livro"
+    ],
+    [
+     "Aulas de Onur Mutlu sobre DRAM",
+     "https://www.youtube.com/results?search_query=Onur%20Mutlu%20DRAM%20lecture",
+     "grátis · vídeo"
+    ]
+   ],
+   "ok": "O gráfico do seu benchmark mostra um degrau para cada nível de cache, e você explica cada um."
+  },
+  {
+   "id": "NET-01",
+   "f": 8,
+   "t": "net",
+   "n": "C#",
+   "h": 60,
+   "k": [
+    ".NET SDK e dotnet CLI; projetos e soluções",
+    "Tipos de valor e de referência; struct e class; boxing",
+    "Nullable reference types",
+    "Propriedades, records e init",
+    "Herança, interfaces e classes abstratas",
+    "Generics e restrições",
+    "Coleções e LINQ",
+    "Delegates, lambdas e eventos",
+    "Exceções, using e IDisposable",
+    "async/await e Task",
+    "Pattern matching",
+    "Span<T> e Memory<T> (noções); coletor de lixo e gerações"
+   ],
+   "p": "CLI de controle de estudos que importa CSV e consulta com LINQ, com testes xUnit",
+   "r": [
+    [
+     "Microsoft Learn: C#",
+     "https://learn.microsoft.com/pt-br/dotnet/csharp/",
+     "grátis · português"
+    ],
+    [
+     "C# in Depth (Jon Skeet)",
+     null,
+     "livro"
+    ],
+    [
+     "C# and .NET: Modern Cross-Platform Development Fundamentals (Mark J. Price)",
+     null,
+     "livro · edição mais recente"
+    ]
+   ],
+   "ok": "Você troca laços por LINQ e explica a execução adiada (deferred execution)."
+  },
+  {
+   "id": "NET-02",
+   "f": 8,
+   "t": "net",
+   "n": "ASP.NET Core e ecossistema",
+   "h": 70,
+   "k": [
+    "Minimal APIs e controllers",
+    "Injeção de dependência e tempos de vida (singleton, scoped, transient)",
+    "Pipeline de middleware",
+    "Configuração (appsettings, options pattern) e ambientes",
+    "Entity Framework Core: DbContext, migrations, relacionamentos, LINQ to Entities e tracking",
+    "Autenticação e autorização (JWT, ASP.NET Core Identity)",
+    "Validação e ProblemDetails",
+    "Logs com ILogger ou Serilog; OpenTelemetry (noções)",
+    "Testes: xUnit, NSubstitute, WebApplicationFactory e Testcontainers",
+    "Background services e SignalR",
+    "Camadas, Clean Architecture e DDD (noções)",
+    ".NET em Docker"
+   ],
+   "p": "API do kanban reescrita em ASP.NET Core, EF Core e Postgres, com SignalR atualizando o quadro em tempo real",
+   "r": [
+    [
+     "Microsoft Learn: ASP.NET Core",
+     "https://learn.microsoft.com/pt-br/aspnet/core/",
+     "grátis · português"
+    ],
+    [
+     "Microsoft Learn: Entity Framework Core",
+     "https://learn.microsoft.com/pt-br/ef/core/",
+     "grátis · português"
+    ],
+    [
+     "eShop (app de referência da Microsoft)",
+     "https://github.com/dotnet/eShop",
+     "código"
+    ]
+   ],
+   "ok": "Dois navegadores abertos veem o mesmo cartão mudar ao mesmo tempo."
+  },
+  {
+   "id": "NET-03",
+   "f": 8,
+   "t": "net",
+   "n": ".NET a fundo",
+   "h": 25,
+   "k": [
+    "CLR, IL, JIT e Native AOT",
+    "Coletor de lixo: gerações, LOH, modos servidor e estação",
+    "BenchmarkDotNet",
+    "Span<T>, ArrayPool e código sem alocação",
+    "Diagnóstico: dotnet-counters, dotnet-trace e dotnet-dump"
+   ],
+   "p": "Otimizar um endpoint medindo antes e depois com BenchmarkDotNet",
+   "r": [
+    [
+     "Pro .NET Memory Management (Konrad Kokosa)",
+     null,
+     "livro"
+    ],
+    [
+     "Blog do .NET: Performance Improvements (Stephen Toub)",
+     "https://devblogs.microsoft.com/dotnet/",
+     "grátis · anual"
+    ]
+   ],
+   "ok": "Você lê um relatório do BenchmarkDotNet e explica de onde vêm as alocações."
+  },
+  {
+   "id": "HW-06",
+   "f": 8,
+   "t": "emb",
+   "n": "FPGA e projeto digital em Verilog",
+   "h": 50,
+   "w": "É o ponto mais alto da trilha de hardware: você descreve um processador e ele vira circuito.",
+   "k": [
+    "O que é uma FPGA: LUTs, flip-flops e roteamento",
+    "Verilog e SystemVerilog: módulos, always, assign; atribuição bloqueante e não bloqueante",
+    "Lógica combinacional e sequencial em HDL",
+    "Testbenches e simulação (Icarus Verilog ou Verilator; GTKWave)",
+    "Máquinas de estado em HDL",
+    "Síntese, restrições de tempo e frequência máxima",
+    "Toolchain aberta: Yosys e nextpnr",
+    "Placa barata: Tang Nano 9K ou 20K, ou iCESugar",
+    "UART em Verilog"
+   ],
+   "p": "CPU RISC-V de ciclo único em Verilog, rodando na FPGA um programa C compilado por você",
+   "r": [
+    [
+     "HDLBits",
+     "https://hdlbits.01xz.net",
+     "grátis · exercícios no navegador"
+    ],
+    [
+     "Digital Design and Computer Architecture: RISC-V Edition, caps. 4 e 7",
+     null,
+     "livro"
+    ],
+    [
+     "Aulas e labs de Onur Mutlu",
+     "https://www.youtube.com/results?search_query=Onur%20Mutlu%20Digital%20Design%20and%20Computer%20Architecture%20lab%20Verilog",
+     "grátis · vídeo"
+    ]
+   ],
+   "ok": "Você resolve o HDLBits até as máquinas de estado e sua CPU passa nos testes de instruções."
+  },
+  {
+   "id": "CPP-01",
+   "f": 9,
+   "t": "cpp",
+   "n": "C++: fundamentos modernos",
+   "h": 70,
+   "k": [
+    "De C para C++: referências, namespaces e sobrecarga",
+    "Classes, construtores, destrutores e listas de inicialização",
+    "RAII: o recurso nasce e morre com o objeto",
+    "std::string, vector, array, map e unordered_map",
+    "Smart pointers: unique_ptr, shared_ptr e weak_ptr",
+    "Regra do 0, do 3 e do 5",
+    "Semântica de movimento: lvalue, rvalue e std::move",
+    "Herança, funções virtuais, vtable, override e final",
+    "Sobrecarga de operadores",
+    "Lambdas e captura",
+    "Exceções e garantias de segurança",
+    "const e constexpr"
+   ],
+   "p": "Biblioteca de matrizes com operadores sobrecarregados, testes e nenhum erro no AddressSanitizer",
+   "r": [
+    [
+     "learncpp.com",
+     "https://www.learncpp.com",
+     "grátis · o melhor curso de C++"
+    ],
+    [
+     "Programming: Principles and Practice Using C++, 3ª ed. (Stroustrup)",
+     null,
+     "livro"
+    ],
+    [
+     "CppCon: Back to Basics",
+     "https://www.youtube.com/results?search_query=CppCon%20Back%20to%20Basics",
+     "grátis · vídeo"
+    ]
+   ],
+   "ok": "Você explica o que acontece em cada linha de um código com std::move e por que nada vaza."
+  },
+  {
+   "id": "CPP-02",
+   "f": 9,
+   "t": "cpp",
+   "n": "C++ avançado",
+   "h": 70,
+   "k": [
+    "Templates de função e de classe; especialização; variadic templates",
+    "STL: contêineres, iteradores e algoritmos, com suas complexidades",
+    "Ranges e views (C++20)",
+    "Concepts (C++20)",
+    "std::optional, std::variant e std::expected (C++23)",
+    "Concorrência: thread, jthread, mutex, condition_variable, atomic e ordem de memória",
+    "Módulos e corrotinas (C++20, noções)",
+    "CMake moderno com targets; vcpkg ou Conan",
+    "Ferramentas: sanitizers, clang-tidy, clang-format, GoogleTest e perf",
+    "Comportamento indefinido em C++"
+   ],
+   "p": "Pool de threads genérico com fila de tarefas, testado com ThreadSanitizer",
+   "r": [
+    [
+     "A Tour of C++, 3ª ed. (Stroustrup)",
+     null,
+     "livro"
+    ],
+    [
+     "Effective Modern C++ (Scott Meyers)",
+     null,
+     "livro"
+    ],
+    [
+     "C++ Concurrency in Action (Anthony Williams)",
+     null,
+     "livro"
+    ],
+    [
+     "cppreference",
+     "https://en.cppreference.com",
+     "referência"
+    ]
+   ],
+   "ok": "Seu pool de threads passa no ThreadSanitizer sob carga."
+  },
+  {
+   "id": "CPP-03",
+   "f": 9,
+   "t": "cpp",
+   "n": "Projetos em C++",
+   "h": 40,
+   "k": [
+    "Ray Tracing in One Weekend",
+    "Emulador de CHIP-8 com SDL ou raylib",
+    "Jogo 2D com raylib",
+    "Simulador RISC-V da Fase 7 reescrito em C++ moderno"
+   ],
+   "p": "Emulador de CHIP-8 que roda ROMs públicas, com depurador de instruções na tela",
+   "r": [
+    [
+     "Ray Tracing in One Weekend",
+     "https://raytracing.github.io",
+     "grátis · livro"
+    ],
+    [
+     "Guia para escrever um emulador de CHIP-8 (Tobias V. Langhoff)",
+     "https://tobiasvl.github.io/blog/write-a-chip-8-emulator/",
+     "grátis"
+    ],
+    [
+     "raylib",
+     "https://www.raylib.com",
+     "grátis"
+    ]
+   ],
+   "ok": "Pong e Tetris rodam no seu emulador."
+  },
+  {
+   "id": "ENG-01",
+   "f": 9,
+   "t": "eng",
+   "n": "Engenharia de software",
+   "h": 50,
+   "k": [
+    "Coesão, acoplamento, SOLID, DRY, KISS e YAGNI",
+    "Padrões essenciais: Strategy, Observer, Factory, Adapter, Decorator e Repository",
+    "Refatoração e code smells",
+    "Testes: pirâmide, TDD e dublês (mock, stub, fake)",
+    "Arquitetura: camadas, hexagonal, monólito modular e microsserviços",
+    "Sistemas distribuídos: filas, idempotência e consistência (noções)",
+    "Documentação: README, ADRs e diagramas (C4, Mermaid)",
+    "Revisão de código e trabalho em equipe"
+   ],
+   "p": "Escrever 3 ADRs para o kanban e refatorar o módulo mais confuso dele, com testes antes e depois",
+   "r": [
+    [
+     "Refactoring.Guru: padrões de projeto",
+     "https://refactoring.guru/pt-br/design-patterns",
+     "grátis · português"
+    ],
+    [
+     "A Philosophy of Software Design (John Ousterhout)",
+     null,
+     "livro"
+    ],
+    [
+     "Refatoração (Martin Fowler)",
+     null,
+     "livro · português"
+    ],
+    [
+     "Designing Data-Intensive Applications (Martin Kleppmann)",
+     null,
+     "livro"
+    ]
+   ],
+   "ok": "Você aponta problemas de design num PR alheio e propõe uma alternativa concreta."
+  },
+  {
+   "id": "ENG-02",
+   "f": 9,
+   "t": "eng",
+   "n": "Segurança aplicada",
+   "h": 25,
+   "k": [
+    "OWASP Top 10 na prática",
+    "Criptografia aplicada: hash, HMAC, cifras simétricas e assimétricas, TLS",
+    "Senhas, sessões, tokens e gestão de segredos",
+    "Falhas de memória em C e C++ e suas mitigações",
+    "Cadeia de suprimentos: dependências, lockfiles e assinaturas",
+    "LGPD para desenvolvedores (noções)"
+   ],
+   "p": "Concluir os laboratórios de nível Apprentice da PortSwigger Web Security Academy",
+   "r": [
+    [
+     "PortSwigger Web Security Academy",
+     "https://portswigger.net/web-security",
+     "grátis · laboratórios"
+    ],
+    [
+     "OWASP Cheat Sheet Series",
+     "https://cheatsheetseries.owasp.org",
+     "grátis"
+    ]
+   ],
+   "ok": "Você encontra e corrige uma injeção de SQL e um XSS na sua própria API."
+  },
+  {
+   "id": "ENG-03",
+   "f": 9,
+   "t": "eng",
+   "n": "Projeto integrador e portfólio",
+   "h": 60,
+   "k": [
+    "Integrar ESP32 → API (.NET ou Node) em Docker → web React → apps React Native e Android",
+    "CI/CD do conjunto inteiro",
+    "README de cada projeto com arquitetura, como rodar e decisões",
+    "4 a 6 projetos fixados no GitHub",
+    "Contribuições regulares a projetos open source",
+    "Escrever sobre o que aprendeu (blog ou Obsidian Publish)"
+   ],
+   "p": "Sistema completo da estação meteorológica: sensor, firmware, API, banco, painel web, apps e pipeline",
+   "r": [
+    [
+     "roadmap.sh",
+     "https://roadmap.sh",
+     "grátis · para achar lacunas"
+    ]
+   ],
+   "ok": "Outra pessoa clona o repositório e sobe tudo com um comando."
+  }
+ ],
+ "KIT": [
+  [
+   1,
+   "Multímetro digital com teste de continuidade; protoboard de 830 pontos e jumpers; kit de resistores de 1/4 W (série E12); LEDs de 5 mm; botões táteis; potenciômetros de 10 kΩ; módulo de alimentação para protoboard (5 V e 3,3 V) ou suporte para 4 pilhas AA."
+  ],
+  [
+   3,
+   "Transistores BC547 e BC557; MOSFET de nível lógico (IRLZ44N); diodos 1N4007 e 1N4148; capacitores cerâmicos e eletrolíticos sortidos; CIs 555 e LM358; regulador 7805 ou AMS1117; motor DC pequeno. Ferro de solda com controle de temperatura, estanho com fluxo e sugador. Osciloscópio: um de bancada usado com 2 canais, ou um portátil para começar."
+  ],
+  [
+   4,
+   "CIs 74HC00, 74HC04, 74HC08, 74HC32, 74HC86, 74HC74, 74HC595 e um contador (74HC161 ou 74HC193); displays de 7 segmentos."
+  ],
+  [
+   5,
+   "Arduino Uno ou compatível com ATmega328P; ESP32 DevKit; Raspberry Pi Pico 2; sensor BME280; display OLED SSD1306 (I²C); analisador lógico USB de 8 canais compatível com PulseView; placa STM32 Nucleo (por exemplo, F401RE)."
+  ],
+  [
+   8,
+   "Placa FPGA Sipeed Tang Nano 9K ou 20K, ou iCESugar."
+  ]
+ ]
+}
