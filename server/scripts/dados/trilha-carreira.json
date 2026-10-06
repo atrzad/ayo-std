@@ -1,0 +1,456 @@
+{
+  "PARTES": [
+    { "n": 1, "nome": "Programação", "sub": "Java, Python e C/C++ para sustentar cada linha do currículo", "hex": "#d9822b",
+      "why": "As três vagas pedem lógica e uma linguagem de verdade. O Eldorado exige Java e Python; o laboratório de telecom valoriza C/C++ e Python." },
+    { "n": 2, "nome": "Testes e bugs", "sub": "Técnicas de teste, report de bugs, requisitos e ágil", "hex": "#4f8fdc",
+      "why": "É o coração da vaga de QA e a base das outras duas: antes de automatizar um teste, é preciso saber escrever um bom caso de teste e um bom report." },
+    { "n": 3, "nome": "Android", "sub": "Testar, automatizar e investigar falhas em smartphones", "hex": "#5fae4a",
+      "why": "As três vagas são de smartphones Android. Aqui o Ayo Música vira o seu laboratório: tudo o que você aprender, aplique nele." },
+    { "n": 4, "nome": "Linux e redes celulares", "sub": "Automação no terminal e redes 2G, 3G, 4G e 5G", "hex": "#9b6fd6",
+      "why": "A vaga de laboratório de telecom pede automação em Linux e analisadores de protocolo de redes celulares. A residência do Eldorado é o seu ponto de partida." },
+    { "n": 5, "nome": "Ferramentas e IA", "sub": "Gemini Code Assist, Git e CI", "hex": "#e8b730",
+      "why": "O Eldorado pede uso comprovado do Gemini Code Assist. Git e CI aparecem como diferencial em todas." },
+    { "n": 6, "nome": "Inglês e entrevista", "sub": "Contar os seus projetos e responder em inglês", "hex": "#c4302b",
+      "why": "Saber muito e não conseguir mostrar na entrevista é o jeito mais comum de perder a vaga. O Eldorado pede inglês avançado." }
+  ],
+  "VAGAS": {
+    "TEL": "Testes Android em laboratório de telecom",
+    "QA": "Estágio em Testes de Software (QAPL)",
+    "AUT": "Automação de Testes — Instituto Eldorado"
+  },
+  "MODS": [
+    {
+      "id": "C-01", "p": 1, "n": "Lógica, orientação a objetos e estruturas de dados em Java", "h": 20, "v": ["AUT", "TEL"],
+      "dev": [["Fase 3 - Pensar em algoritmos", "ALG-01"], ["Fase 7 - Mobile e silício", "JVM-01"]],
+      "w": "O Eldorado pede Java, orientação a objetos e estruturas de dados. Hoje é a lacuna mais visível no seu GitHub.",
+      "r": [
+        "Explicar classe, objeto, atributo, método e construtor com um exemplo próprio",
+        "Explicar os quatro pilares: encapsulamento, herança, polimorfismo e abstração",
+        "Diferença entre interface e classe abstrata",
+        "Quando usar ArrayList, LinkedList, HashMap, HashSet e ArrayDeque",
+        "Complexidade O(1), O(log n), O(n) e O(n²), com um exemplo de cada"
+      ],
+      "k": [
+        "Tipos primitivos e de referência, String imutável, equals e ==",
+        "Controle de fluxo, laços e métodos estáticos",
+        "Classes, construtores e modificadores de acesso (private, protected, public)",
+        "Herança, sobrescrita (@Override) e sobrecarga",
+        "Interfaces, classes abstratas e polimorfismo na prática",
+        "Exceções: checked e unchecked, try/catch/finally, try-with-resources",
+        "Collections: List, Set, Map, Queue e Deque; ordenar com Comparator",
+        "Generics básicos: List<T> e métodos genéricos",
+        "Pilha, fila, lista ligada, árvore binária de busca e busca binária implementadas à mão",
+        "Lambdas e streams: map, filter e collect"
+      ],
+      "proj": "Gerenciador de casos de teste em Java (cadastrar caso, executar, marcar passou ou falhou, relatório no terminal), com classes e coleções, publicado no GitHub glwydson",
+      "rec": [
+        ["Learn Java (dev.java)", "https://dev.java/learn/", "oficial, grátis"],
+        ["The Java Tutorials (Oracle)", "https://docs.oracle.com/javase/tutorial/", "grátis"],
+        ["Exercism — trilha de Java", "https://exercism.org/tracks/java", "exercícios grátis com correção"]
+      ],
+      "ok": "Você resolve exercícios de lista, mapa e fila em Java sem consultar e explica os quatro pilares usando o seu próprio projeto."
+    },
+    {
+      "id": "C-02", "p": 1, "n": "Java para testes: JUnit 5 e Gradle", "h": 12, "v": ["AUT"],
+      "dev": [["Fase 7 - Mobile e silício", "JVM-01"]],
+      "w": "Automação de testes em Java começa no JUnit. O mesmo formato aparece nos testes instrumentados do Android.",
+      "r": [
+        "Estrutura de um teste: preparar, agir e verificar (Arrange, Act, Assert)",
+        "Anotações @Test, @BeforeEach, @AfterEach e @ParameterizedTest",
+        "Diferença entre teste unitário, de integração e de interface",
+        "Rodar os testes pelo Gradle e ler o relatório"
+      ],
+      "k": [
+        "Projeto Gradle do zero: build.gradle.kts, dependências e a tarefa test",
+        "Asserções do JUnit 5: assertEquals, assertThrows e assertAll",
+        "Testes parametrizados e nomes descritivos (@DisplayName)",
+        "Dublês de teste: stub, mock e fake (noção de Mockito)",
+        "Cobertura de código (JaCoCo) e o que ela não garante",
+        "Relatório HTML de testes do Gradle como evidência"
+      ],
+      "proj": "Escrever testes JUnit para o projeto do C-01, rodar com ./gradlew test e configurar o GitHub Actions para rodar a cada push",
+      "rec": [
+        ["JUnit 5 User Guide", "https://junit.org/junit5/docs/current/user-guide/", "oficial"],
+        ["Gradle — Testing in Java", "https://docs.gradle.org/current/userguide/java_testing.html", "oficial"],
+        ["Mockito", "https://site.mockito.org/", "oficial"]
+      ],
+      "ok": "O repositório do C-01 tem testes passando no CI e você explica o formato AAA e o que é um mock."
+    },
+    {
+      "id": "C-03", "p": 1, "n": "Python para automação e dados", "h": 16, "v": ["AUT", "TEL"],
+      "dev": [["Fase 1 - Primeira linguagem", "PY-03"], ["Fase 5 - Servidor, dados e rede", "PY-04"]],
+      "w": "As vagas pedem scripts de coleta, processamento e análise de dados e relatórios automáticos. Python é a ferramenta do dia a dia para isso.",
+      "r": [
+        "Rodar comandos externos com subprocess.run e ler a saída e o código de retorno",
+        "Ler e gravar CSV e JSON com os módulos csv e json",
+        "Script com argumentos (argparse) e código de saída",
+        "Agrupar e resumir dados com pandas (groupby e describe)"
+      ],
+      "k": [
+        "Estrutura de script: main, funções e logging no lugar de print",
+        "pathlib para arquivos e pastas",
+        "Expressões regulares para extrair dados de logs",
+        "datetime e medição de tempo",
+        "pandas: DataFrame, filtros, groupby, merge e exportar para CSV ou Excel",
+        "Gráficos com matplotlib",
+        "Relatório em HTML ou Markdown gerado pelo próprio script",
+        "Ambiente virtual (venv) e requirements.txt",
+        "pytest: fixtures e testes parametrizados"
+      ],
+      "proj": "Script que lê vários arquivos de logcat, conta erros por tag e por hora e gera um relatório HTML com gráfico",
+      "rec": [
+        ["Tutorial oficial do Python", "https://docs.python.org/pt-br/3/tutorial/", "em português"],
+        ["Automate the Boring Stuff with Python", "https://automatetheboringstuff.com/", "livro grátis online"],
+        ["pandas — Getting started", "https://pandas.pydata.org/docs/getting_started/index.html", "oficial"],
+        ["pytest", "https://docs.pytest.org/", "oficial"]
+      ],
+      "ok": "Você escreve do zero um script de coleta e relatório com argparse, logging e um teste em pytest."
+    },
+    {
+      "id": "C-04", "p": 1, "n": "Revisão de C e C++", "h": 10, "v": ["TEL"],
+      "dev": [["Fase 2 - Perto do metal", "C-01 e C-02"], ["Fase 9 - C++ e síntese", "CPP-01"]],
+      "w": "C/C++ é diferencial na vaga de telecom e aparece no seu currículo (Repo Manager e NDK no Ayo Música). Esteja pronto para perguntas sobre memória.",
+      "r": [
+        "Ponteiros: endereço (&) e desreferência (*)",
+        "Pilha e heap; malloc/free e new/delete",
+        "Etapas: pré-processador, compilação e ligação",
+        "Makefile básico: alvo, dependências e regra"
+      ],
+      "k": [
+        "Arrays e strings em C, e o terminador '\\0'",
+        "struct, enum e passagem por referência",
+        "Erros clássicos: buffer overflow, vazamento de memória e ponteiro solto",
+        "Ferramentas: gcc -Wall, gdb e valgrind",
+        "C++: classes, referências, RAII, std::vector, std::string e std::map",
+        "Ler e explicar o código do seu Repo Manager (C e GTK4)"
+      ],
+      "proj": "Ferramenta em C que lê um arquivo de log e conta linhas por nível (E, W, I), compilada com Makefile e verificada no valgrind sem vazamentos",
+      "rec": [
+        ["Beej's Guide to C Programming", "https://beej.us/guide/bgc/", "grátis"],
+        ["cppreference", "https://en.cppreference.com/", "referência de C e C++"],
+        ["Learn C++", "https://www.learncpp.com/", "grátis"]
+      ],
+      "ok": "Você explica cada arquivo do Repo Manager e o valgrind não acusa vazamento no seu projeto."
+    },
+    {
+      "id": "C-05", "p": 2, "n": "Fundamentos de teste (base ISTQB CTFL)", "h": 16, "v": ["QA", "AUT"],
+      "dev": [["Fase 9 - C++ e síntese", "ENG-01"]],
+      "w": "Caixa-preta, testes funcionais, de aceitação e exploratórios são as atividades principais da vaga de QA. O programa do CTFL organiza tudo isso.",
+      "r": [
+        "Erro, defeito e falha: a diferença",
+        "Os sete princípios do teste (ex.: teste exaustivo é impossível; defeitos se agrupam)",
+        "Caixa-preta, caixa-branca e testes baseados em experiência",
+        "Partição de equivalência e análise de valor-limite com um exemplo",
+        "Níveis de teste: unidade, integração, sistema e aceitação",
+        "Teste funcional e não funcional; regressão e reteste"
+      ],
+      "k": [
+        "Processo de teste: planejamento, análise, modelagem, implementação, execução e encerramento",
+        "Caso de teste: pré-condição, passos, dados e resultado esperado",
+        "Tabela de decisão e transição de estados",
+        "Teste exploratório em sessões com missão (charter)",
+        "Teste de aceitação e critérios de aceitação (Dado, Quando, Então)",
+        "Teste de fumaça (smoke) e de sanidade",
+        "Pirâmide de testes e onde a automação compensa",
+        "Testes estáticos: revisão de requisitos",
+        "Um simulado completo do CTFL (40 questões)"
+      ],
+      "proj": "Escrever 15 casos de teste para o Ayo Música (reprodução, fila, letras) usando partição de equivalência e valor-limite, executar no emulador e registrar o resultado numa planilha",
+      "rec": [
+        ["ISTQB — Certified Tester Foundation Level", "https://www.istqb.org/certifications/certified-tester-foundation-level", "programa oficial e simulados"],
+        ["Ministry of Testing", "https://www.ministryoftesting.com/", "artigos e comunidade de QA"]
+      ],
+      "ok": "Você acerta pelo menos 65% num simulado do CTFL e explica cada técnica com um exemplo seu."
+    },
+    {
+      "id": "C-06", "p": 2, "n": "Report e ciclo de vida do bug", "h": 6, "v": ["QA", "AUT"],
+      "dev": [],
+      "w": "Reportar e acompanhar bugs é metade do trabalho de QA. Um report bom economiza horas do desenvolvedor.",
+      "r": [
+        "Partes de um bom report: título, ambiente, passos, esperado e obtido, evidências",
+        "Severidade e prioridade, com um exemplo de cada combinação",
+        "Ciclo: novo, atribuído, corrigido, reteste, fechado ou reaberto",
+        "Como reproduzir um bug intermitente (frequência e condições)"
+      ],
+      "k": [
+        "Título curto e específico",
+        "Evidências: print, vídeo (adb screenrecord), logcat e bugreport",
+        "Versão do app, build, aparelho e versão do Android no report",
+        "Jira: tipos de issue, quadros Scrum e Kanban, filtros (JQL básico)",
+        "Comunicação com quem desenvolve: fatos, sem culpa",
+        "Métricas: bugs abertos, reabertos e tempo até a correção"
+      ],
+      "proj": "Reportar 5 bugs reais (de apps que você usa ou do Ayo Música) no formato completo, com vídeo e logcat, num quadro do Jira ou no GitHub Issues",
+      "rec": [
+        ["Mozilla — Bug writing guidelines", "https://bugzilla.mozilla.org/page.cgi?id=bug-writing.html", "referência clássica"],
+        ["Jira — guias", "https://www.atlassian.com/software/jira/guides", "oficial"]
+      ],
+      "ok": "Outra pessoa consegue reproduzir os seus bugs só lendo o report."
+    },
+    {
+      "id": "C-07", "p": 2, "n": "Requisitos e metodologias ágeis", "h": 6, "v": ["QA"],
+      "dev": [["Fase 9 - C++ e síntese", "ENG-01"]],
+      "w": "A vaga de QA inclui análise de requisitos e gerenciamento de projetos em equipes Scrum e Kanban.",
+      "r": [
+        "Papéis do Scrum (PO, Scrum Master, desenvolvedores) e eventos (planning, daily, review, retrospectiva)",
+        "Kanban: limite de trabalho em andamento (WIP) e fluxo puxado",
+        "História de usuário (Como… quero… para…) e critérios de aceitação",
+        "Onde o QA atua na sprint: refinamento, teste durante a sprint e definição de pronto"
+      ],
+      "k": [
+        "Requisito funcional e não funcional",
+        "Ambiguidade em requisitos: como apontar e perguntar",
+        "Definition of Ready e Definition of Done",
+        "BDD e Gherkin (Dado, Quando, Então)",
+        "Shift-left: testar desde o requisito",
+        "Rever o README e as sprints do seu Sistema de prestação de contas como exemplo real"
+      ],
+      "proj": "Escrever 5 histórias de usuário com critérios de aceitação em Gherkin para um recurso do Ayo Música, e os casos de teste que saem delas",
+      "rec": [
+        ["Guia do Scrum", "https://scrumguides.org/", "tem versão em português"],
+        ["Gherkin Reference (Cucumber)", "https://cucumber.io/docs/gherkin/reference/", "oficial"]
+      ],
+      "ok": "Você transforma um requisito vago em critérios de aceitação testáveis."
+    },
+    {
+      "id": "C-08", "p": 3, "n": "Android para testes: aparelho, emulador e ADB", "h": 12, "v": ["QA", "AUT", "TEL"],
+      "dev": [["Fase 7 - Mobile e silício", "JVM-03"]],
+      "w": "Usuário avançado de Android e testes mobile aparecem nas três vagas. ADB e logcat são as ferramentas que você vai usar todos os dias.",
+      "r": [
+        "Ativar as opções do desenvolvedor e a depuração USB",
+        "ADB: devices, install, shell, logcat, pull, push, screencap e screenrecord",
+        "Ler um logcat: níveis (V, D, I, W, E), tags e filtro por pacote",
+        "Ciclo de vida da Activity (onCreate, onResume, onPause…) e por que importa no teste"
+      ],
+      "k": [
+        "Usuário avançado: permissões, notificações, economia de bateria, idioma e rotação",
+        "Android Studio: abrir projeto, rodar no emulador, Logcat e Layout Inspector",
+        "Emulador: criar AVD e simular rede, GPS, bateria e chamadas",
+        "adb shell: am start, pm list packages e dumpsys (battery, activity, meminfo)",
+        "Bugreport completo e como achar o crash nele",
+        "Instalar builds de teste (APK debug e release)",
+        "Testar interrupções: chamada, rotação, sem rede, pouca memória e segundo plano",
+        "Versões diferentes do Android e tamanhos de tela"
+      ],
+      "proj": "Sessão de teste exploratório de 30 minutos num app real no emulador, documentada com screenrecord, logcat e um relatório",
+      "rec": [
+        ["Opções do desenvolvedor", "https://developer.android.com/studio/debug/dev-options", "oficial"],
+        ["Android Debug Bridge (adb)", "https://developer.android.com/tools/adb", "oficial"],
+        ["Logcat (linha de comando)", "https://developer.android.com/tools/logcat", "oficial"],
+        ["Android Emulator", "https://developer.android.com/studio/run/emulator", "oficial"],
+        ["Bug reports", "https://developer.android.com/studio/debug/bug-report", "oficial"]
+      ],
+      "ok": "Você coleta logcat, print, vídeo e bugreport de uma falha sem consultar a documentação."
+    },
+    {
+      "id": "C-09", "p": 3, "n": "Automação de testes Android", "h": 20, "v": ["AUT", "TEL"],
+      "dev": [["Fase 7 - Mobile e silício", "JVM-03"]],
+      "w": "É a atividade principal do Eldorado e diferencial no laboratório de telecom: automatizar validações e a captura de evidências.",
+      "r": [
+        "Espresso (dentro do app) e UI Automator (o sistema todo): quando usar cada um",
+        "Appium: arquitetura cliente e servidor, várias linguagens",
+        "Localizar elementos: resource-id, texto, content-desc e XPath",
+        "Esperas: por que um sleep fixo deixa o teste instável (flaky)"
+      ],
+      "k": [
+        "Testes instrumentados: pasta androidTest e AndroidJUnitRunner",
+        "Espresso: onView, perform e check",
+        "UI Automator: UiDevice, By, Until, ir para a tela inicial e abrir apps",
+        "uiautomator2 (Python) ou Appium com Python para scripts rápidos",
+        "Captura automática de evidências: print e logcat a cada passo",
+        "Monkey para teste de estresse",
+        "Rodar os testes no emulador pelo terminal e no CI (GitHub Actions)",
+        "Page Object para organizar os testes",
+        "Relatório de resultados (JUnit XML ou HTML)"
+      ],
+      "proj": "Automatizar 5 casos de teste do Ayo Música com UI Automator ou uiautomator2, salvando print e logcat de cada passo e um relatório no fim",
+      "rec": [
+        ["UI Automator", "https://developer.android.com/training/testing/other-components/ui-automator", "oficial"],
+        ["Espresso", "https://developer.android.com/training/testing/espresso", "oficial"],
+        ["Appium", "https://appium.io/docs/en/latest/", "oficial"],
+        ["uiautomator2 (Python)", "https://github.com/openatx/uiautomator2", "código aberto"],
+        ["Monkey", "https://developer.android.com/studio/test/other-testing-tools/monkey", "oficial"]
+      ],
+      "ok": "Os 5 testes rodam pelo terminal sem você tocar no emulador e geram evidências."
+    },
+    {
+      "id": "C-10", "p": 3, "n": "Investigação de falhas e causa raiz", "h": 8, "v": ["AUT"],
+      "dev": [],
+      "w": "O Eldorado pede apoio em análises de causa raiz. Você já tem casos reais no Ayo Música; falta organizar o método.",
+      "r": [
+        "Crash e ANR: o que são e onde aparecem no log",
+        "Ler uma stack trace: exceção, mensagem e a primeira linha do seu código",
+        "5 porquês e diagrama de Ishikawa",
+        "Isolar a falha: reproduzir, reduzir os passos e comparar versões"
+      ],
+      "k": [
+        "Crash nativo e tombstone (C/C++ via NDK)",
+        "ANR: thread principal bloqueada e traces",
+        "git bisect para achar a versão que introduziu o problema",
+        "Medir desempenho: quadros perdidos, dumpsys gfxinfo e tempo de inicialização",
+        "Cruzar logs com o horário e os passos do teste",
+        "Escrever a análise: sintoma, causa, correção e como evitar",
+        "Rever os seus casos reais: travamento com 12 mil músicas (expressão regular recriada a cada chamada) e gestos da borda brigando com o voltar do Android"
+      ],
+      "proj": "Escrever a análise de causa raiz de um bug real do Ayo Música: sintoma, evidências, 5 porquês, correção e o teste que impede a volta",
+      "rec": [
+        ["ANRs", "https://developer.android.com/topic/performance/vitals/anr", "oficial"],
+        ["Crashes", "https://developer.android.com/topic/performance/vitals/crash", "oficial"],
+        ["git bisect", "https://git-scm.com/docs/git-bisect", "oficial"]
+      ],
+      "ok": "Você conta um caso real de causa raiz em 2 minutos, com evidência e aprendizado."
+    },
+    {
+      "id": "C-11", "p": 4, "n": "Linux para automação", "h": 8, "v": ["TEL"],
+      "dev": [["Fase 0 - Alicerce", "B-04"], ["Fase 6 - Infraestrutura e sistemas", "OPS-01"]],
+      "w": "A vaga de telecom pede manutenção de softwares de automação em Linux, e você já usa Linux todo dia. Falta organizar o conhecimento.",
+      "r": [
+        "Permissões (chmod, chown) e usuário comum e root",
+        "Pipes e redirecionamento (|, >, 2>&1) com grep, awk e sed",
+        "Agendar tarefas: cron e systemd timer",
+        "Processos e logs: ps, top, kill e journalctl"
+      ],
+      "k": [
+        "Script Bash: variáveis, if, for, funções e set -euo pipefail",
+        "Códigos de saída e tratamento de erro",
+        "SSH com chaves; scp e rsync",
+        "Serviços com systemd (como o seu monitor de editais)",
+        "Variáveis de ambiente e PATH",
+        "Regras udev para aparelhos Android (adb sem root)",
+        "tmux para sessões longas"
+      ],
+      "proj": "Script Bash que detecta os aparelhos no adb, instala um APK em todos, roda um teste e guarda os logs numa pasta por data",
+      "rec": [
+        ["The Linux Command Line", "https://linuxcommand.org/tlcl.php", "livro grátis"],
+        ["Arch Wiki — systemd/Timers", "https://wiki.archlinux.org/title/Systemd/Timers", "referência"],
+        ["ShellCheck", "https://www.shellcheck.net/", "verificador de scripts"]
+      ],
+      "ok": "O script passa no ShellCheck sem avisos e roda sozinho por um timer."
+    },
+    {
+      "id": "C-12", "p": 4, "n": "Redes celulares 2G, 3G, 4G e 5G", "h": 20, "v": ["TEL"],
+      "dev": [["Fase 5 - Servidor, dados e rede", "RED-01"]],
+      "w": "A vaga de telecom envolve operar e parametrizar analisadores de protocolo de redes 2G a 5G. Revise o material da residência do Eldorado junto com este módulo.",
+      "r": [
+        "Gerações: 2G (GSM, GPRS, EDGE), 3G (UMTS, HSPA), 4G (LTE) e 5G (NR)",
+        "Arquitetura do 4G: UE, eNodeB, MME, S-GW, P-GW e HSS",
+        "Arquitetura do 5G: gNB, AMF, SMF e UPF; modos NSA e SA",
+        "Camadas do rádio: PHY, MAC, RLC, PDCP, RRC e NAS",
+        "Procedimentos: attach e registro, handover e chamada de voz (VoLTE)"
+      ],
+      "k": [
+        "Bandas, frequência, largura de banda e duplexação (FDD e TDD)",
+        "Indicadores de sinal: RSRP, RSRQ, SINR e RSSI",
+        "Estados RRC: idle, connected e, no 5G, inactive",
+        "SIM e USIM, IMSI, IMEI e autenticação",
+        "Analisador de protocolo e simulador de rede (call box) de laboratório: Keysight, Rohde & Schwarz e Anritsu",
+        "Ler mensagens RRC e NAS num log ou numa captura do Wireshark",
+        "3GPP: o que são as especificações (séries 36 para LTE e 38 para NR)",
+        "Revisar o material da residência em redes celulares do Eldorado"
+      ],
+      "proj": "Abrir uma captura LTE ou 5G de exemplo no Wireshark, identificar a sequência de attach ou registro e escrever um resumo de uma página",
+      "rec": [
+        ["ShareTechnote", "https://www.sharetechnote.com/", "LTE e 5G explicados mensagem a mensagem"],
+        ["3GPP — especificações", "https://www.3gpp.org/specifications-technologies", "oficial"],
+        ["Wireshark — capturas de exemplo", "https://wiki.wireshark.org/SampleCaptures", "grátis"],
+        ["srsRAN (LTE e 5G em software livre)", "https://docs.srsran.com/", "documentação"]
+      ],
+      "ok": "Você desenha de memória a arquitetura do 4G e do 5G e explica o attach passo a passo."
+    },
+    {
+      "id": "C-13", "p": 5, "n": "IA no desenvolvimento: Gemini Code Assist", "h": 6, "v": ["AUT"],
+      "dev": [],
+      "w": "O Eldorado pede uso comprovado do Gemini Code Assist. Você já usa Claude Code e Codex; falta ter exemplos reais com o GCA.",
+      "r": [
+        "Instalar o Gemini Code Assist no VS Code e usar o Gemini no Android Studio",
+        "Pedir explicação, geração de testes, refatoração e documentação",
+        "Revisar sempre: o código gerado pode estar errado ou inseguro",
+        "Nunca colar segredos nem dados de clientes nos prompts"
+      ],
+      "k": [
+        "Completar código e gerar funções a partir de comentários",
+        "Chat com o contexto do arquivo e do projeto",
+        "Gerar testes (JUnit e pytest) e conferir se eles testam algo de verdade",
+        "Depurar: colar a stack trace e pedir hipóteses",
+        "Documentar: docstrings, README e comentários",
+        "Otimizar: pedir uma alternativa e medir antes e depois",
+        "Comparar com o que você já usa (Claude Code e Codex)"
+      ],
+      "proj": "Usar o Gemini Code Assist para escrever os testes do C-02 e o relatório do C-03, anotando no README o que a IA fez e o que você corrigiu",
+      "rec": [
+        ["Gemini Code Assist — documentação", "https://developers.google.com/gemini-code-assist/docs/overview", "oficial"],
+        ["Gemini no Android Studio", "https://developer.android.com/studio/gemini/overview", "oficial"]
+      ],
+      "ok": "Você mostra numa entrevista um exemplo real de uso, com o que a IA errou e como você percebeu."
+    },
+    {
+      "id": "C-14", "p": 5, "n": "Revisão de Git e CI", "h": 4, "v": ["TEL", "QA", "AUT"],
+      "dev": [["Fase 1 - Primeira linguagem", "GIT-01"], ["Fase 6 - Infraestrutura e sistemas", "GIT-02 e OPS-01"]],
+      "w": "Git e controle de versão são diferencial no Eldorado e aparecem em todos os seus currículos.",
+      "r": [
+        "commit, branch, merge, rebase e pull request",
+        "Resolver um conflito",
+        "Workflow do GitHub Actions: on, jobs e steps"
+      ],
+      "k": [
+        "Mensagens de commit claras",
+        ".gitignore e nunca versionar segredos",
+        "Tags e releases",
+        "Rodar testes e guardar artefatos no CI (relatórios e APK)"
+      ],
+      "proj": "Fazer o CI do projeto do C-09 publicar o relatório de testes como artefato",
+      "rec": [
+        ["Pro Git", "https://git-scm.com/book/pt-br/v2", "livro grátis em português"],
+        ["GitHub Actions", "https://docs.github.com/pt/actions", "oficial, em português"]
+      ],
+      "ok": "Todo projeto desta trilha tem CI verde no seu GitHub."
+    },
+    {
+      "id": "C-15", "p": 6, "n": "Inglês técnico e de entrevista", "h": 15, "v": ["TEL", "QA", "AUT"],
+      "dev": [],
+      "w": "As três vagas pedem inglês; o Eldorado pede avançado. O objetivo é conversar sobre os seus projetos sem travar.",
+      "r": [
+        "Apresentar-se em inglês em 1 minuto: estudos, projetos e objetivo",
+        "Explicar um projeto seu em inglês (Ayo Música)",
+        "Vocabulário de teste: test case, bug report, expected and actual result, steps to reproduce, regression, flaky"
+      ],
+      "k": [
+        "Ler a documentação do Android e do 3GPP em inglês sem tradutor",
+        "Escrever um bug report em inglês",
+        "Responder perguntas comuns: strengths, weaknesses, a challenge you faced",
+        "Assistir a vídeos técnicos sem legenda em português",
+        "Treinar conversação duas vezes por semana (gravar e ouvir)"
+      ],
+      "proj": "Gravar um vídeo de 3 minutos em inglês apresentando o Ayo Música e o que você testou nele",
+      "rec": [
+        ["BBC Learning English", "https://www.bbc.co.uk/learningenglish", "grátis"],
+        ["Android Developers (YouTube)", "https://www.youtube.com/@AndroidDevelopers", "conteúdo técnico em inglês"]
+      ],
+      "ok": "Você responde 5 perguntas de entrevista em inglês sem travar."
+    },
+    {
+      "id": "C-16", "p": 6, "n": "Preparação para entrevista", "h": 6, "v": ["TEL", "QA", "AUT"],
+      "dev": [],
+      "w": "Fecha a trilha: transformar o que você estudou e fez em respostas curtas, com exemplos reais.",
+      "r": [
+        "Contar cada projeto no formato STAR: situação, tarefa, ação e resultado",
+        "Explicar cada linha dos seus currículos",
+        "Por que esta vaga e esta empresa (no Eldorado: você já fez a residência lá)"
+      ],
+      "k": [
+        "Lógica: resolver 10 exercícios curtos em Java e Python com tempo marcado",
+        "Perguntas de teste: como você testaria um elevador, uma calculadora, uma tela de login",
+        "Perguntas de Android: ciclo de vida, ADB e logcat",
+        "Perguntas de redes: diferença entre 4G e 5G, o que é handover",
+        "Preparar perguntas para fazer a quem entrevista",
+        "Simular uma entrevista com alguém (ou com IA) e revisar"
+      ],
+      "proj": "Um documento com as suas 5 histórias STAR e as respostas para as perguntas de cada vaga",
+      "rec": [
+        ["Exercism", "https://exercism.org/", "exercícios grátis de Java e Python"],
+        ["LeetCode", "https://leetcode.com/", "problemas de lógica (comece pelos fáceis)"]
+      ],
+      "ok": "Você faz uma simulação completa sem ler as respostas."
+    }
+  ]
+}

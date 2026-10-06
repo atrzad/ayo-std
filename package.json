@@ -12,7 +12,8 @@
     "dev": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning --watch server/index.js",
     "senha": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/scripts/senha.js",
     "fontes": "node server/scripts/copiar-fontes.js",
-    "gerar-dev": "node server/scripts/gerar-trilha-dev.js"
+    "gerar-dev": "node server/scripts/gerar-trilha-dev.js",
+    "gerar-carreira": "node server/scripts/gerar-trilha-carreira.js"
   },
   "dependencies": {
     "express": "^5.2.1",

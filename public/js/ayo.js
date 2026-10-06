@@ -329,8 +329,9 @@
         if (r.hash) cb.dataset.hash = r.hash;
         cb.closest('li')?.classList.toggle('feito', marcado);
         atualizarProgressoNota(r.feitas, r.total);
-        const almas = $('.almas b');
-        if (almas && typeof r.almas === 'number') almas.textContent = r.almas.toLocaleString('pt-BR');
+        if (typeof r.almas === 'number') $$('.almas b').forEach((b) => { b.textContent = r.almas.toLocaleString('pt-BR'); });
+        const naBarra = $('[data-nav-nota-atual] [data-nav-contagem]');
+        if (naBarra && r.total) naBarra.textContent = `${r.feitas}/${r.total}`;
         const sec = atualizarSelos();
         if (marcado) {
           maisUm(cb, '+1');
@@ -548,6 +549,122 @@
       $('[data-citacao-texto]', cit).textContent = `“${c.texto}”`;
       $('[data-citacao-autor]', cit).textContent = c.autor;
       $('[data-citacao-fonte]', cit).textContent = c.fonte;
+    });
+  }
+
+  // ---------- navegação: barra lateral (computador) e gaveta do menu ☰ (celular) ----------
+  const nav = $('#navegacao');
+  if (nav) {
+    const estreita = matchMedia('(max-width: 900px)');
+    const botaoMenu = $('[data-nav-abrir]');
+    const coluna = $('.coluna');
+    const rolagem = $('.navlat-rolagem', nav);
+    let comHistorico = false; // a gaveta aberta ocupa uma entrada do histórico: o "voltar" do Android fecha
+    let destino = null;
+    const aberta = () => document.body.classList.contains('nav-aberta');
+
+    // Mostra a trilha ou a nota atual no meio da lista, sem rolar a página.
+    function mostrarAtual() {
+      const alvo = $('.nav-nota.atual', nav) || $('.nav-item.ativa', nav);
+      if (!alvo || !rolagem) return;
+      const topo = alvo.getBoundingClientRect().top - rolagem.getBoundingClientRect().top + rolagem.scrollTop;
+      if (topo > rolagem.clientHeight * 0.6) rolagem.scrollTop = topo - rolagem.clientHeight / 3;
+    }
+
+    function abrirNav() {
+      if (aberta()) return;
+      document.body.classList.add('nav-aberta');
+      botaoMenu?.setAttribute('aria-expanded', 'true');
+      coluna?.setAttribute('inert', '');
+      history.pushState({ ayoNav: true }, '');
+      comHistorico = true;
+      mostrarAtual();
+      $('.navlat-fechar', nav)?.focus();
+    }
+
+    function fecharNav({ devolverFoco = true } = {}) {
+      if (!aberta()) return;
+      document.body.classList.remove('nav-aberta');
+      botaoMenu?.setAttribute('aria-expanded', 'false');
+      coluna?.removeAttribute('inert');
+      if (comHistorico) { comHistorico = false; history.back(); }
+      if (devolverFoco) botaoMenu?.focus();
+    }
+
+    botaoMenu?.addEventListener('click', (e) => { e.preventDefault(); abrirNav(); });
+    $$('[data-nav-fechar]').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); fecharNav(); }));
+
+    addEventListener('popstate', () => {
+      if (destino) { const url = destino; destino = null; location.href = url; return; }
+      if (aberta()) { comHistorico = false; fecharNav(); }
+    });
+
+    // Escolher um destino na gaveta: primeiro desfaz a entrada do histórico, depois navega
+    // (assim o "voltar" da página nova não reabre esta página com a gaveta aberta).
+    nav.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a || !aberta() || !comHistorico || a.matches('[data-nav-fechar]')) return;
+      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || a.target === '_blank') return;
+      if (a.origin !== location.origin) return;
+      e.preventDefault();
+      destino = a.href;
+      comHistorico = false;
+      history.back();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!aberta()) return;
+      if (e.key === 'Escape') { e.preventDefault(); fecharNav(); return; }
+      if (e.key !== 'Tab') return;
+      const focaveis = $$('a[href], button:not([disabled])', nav).filter((el) => el.offsetParent !== null);
+      if (!focaveis.length) return;
+      const primeiro = focaveis[0], ultimo = focaveis[focaveis.length - 1];
+      if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+      else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
+    });
+
+    estreita.addEventListener('change', () => { if (!estreita.matches) fecharNav({ devolverFoco: false }); });
+    // Página restaurada do cache do navegador (voltar/avançar): nunca com a gaveta aberta.
+    addEventListener('pageshow', (e) => {
+      if (!e.persisted) return;
+      document.body.classList.remove('nav-aberta');
+      coluna?.removeAttribute('inert');
+      botaoMenu?.setAttribute('aria-expanded', 'false');
+      comHistorico = false;
+      destino = null;
+    });
+
+    // Recolher a barra lateral no computador (lembrado só neste navegador).
+    const recolher = $('[data-nav-recolher]', nav);
+    const aplicarRecolhida = (sim) => {
+      document.body.classList.toggle('nav-recolhida', sim);
+      recolher?.setAttribute('aria-pressed', String(sim));
+      const rotulo = sim ? 'Expandir a barra lateral' : 'Recolher a barra lateral';
+      recolher?.setAttribute('title', rotulo);
+      const leitor = recolher && $('.visivel-leitor', recolher);
+      if (leitor) leitor.textContent = rotulo;
+    };
+    let recolhida = false;
+    try { recolhida = localStorage.getItem('ayo-nav-recolhida') === '1'; } catch {}
+    aplicarRecolhida(recolhida);
+    recolher?.addEventListener('click', () => {
+      recolhida = !document.body.classList.contains('nav-recolhida');
+      aplicarRecolhida(recolhida);
+      try { localStorage.setItem('ayo-nav-recolhida', recolhida ? '1' : '0'); } catch {}
+    });
+
+    if (!estreita.matches) mostrarAtual();
+  }
+
+  // Índice da nota: recolhido no celular (abre ao tocar em "Seções"), sempre aberto no computador.
+  const indiceNota = $('details[data-indice-nota]');
+  if (indiceNota) {
+    const estreita = matchMedia('(max-width: 900px)');
+    const ajustar = () => { indiceNota.open = !estreita.matches; };
+    ajustar();
+    estreita.addEventListener('change', ajustar);
+    indiceNota.addEventListener('click', (e) => {
+      if (estreita.matches && e.target.closest('a[data-secao]')) indiceNota.open = false;
     });
   }
 

@@ -173,9 +173,24 @@ async function assuntosDe(u, t) {
   return [...new Set(lista.map((s) => s.trim()).filter((s) => s && s.length <= 100 && !GENERICOS.test(s)))].slice(0, 200);
 }
 
+// Dados de toda página logada. Cada cofre leva o progresso e a lista de notas para a barra lateral
+// (o cache por arquivo de cofres.js evita reler notas que não mudaram).
 async function comum(req) {
   const u = req.usuario;
-  return { usuario: u, trilhas: trilhasTodas(u), almas: temaDe(u) === 'pixel' ? await contarAlmas(u) : null, foco: foco.sessaoAtiva(u.id) };
+  const cofres = [];
+  let almas = 0;
+  for (const t of trilhasDe(u)) {
+    const notas = await notasDe(u, t);
+    let feitas = 0;
+    let total = 0;
+    for (const n of notas) { feitas += n.feitas; total += n.total; }
+    almas += feitas;
+    const proj = gravaNasNotas(u) ? projecao(t, notas) : null;
+    const pct = proj ? (100 * (proj.total - proj.restantes)) / proj.total : total ? (100 * feitas) / total : 0;
+    cofres.push({ ...t, pct, notas: notas.map((n) => ({ rel: n.rel, titulo: n.tituloCurto, feitas: n.feitas, total: n.total })) });
+  }
+  const espacos = trilhasTodas(u).filter((t) => t.espaco);
+  return { usuario: u, trilhas: [...cofres, ...espacos], almas: temaDe(u) === 'pixel' ? almas : null, foco: foco.sessaoAtiva(u.id) };
 }
 
 const textoEvento = (e) => ({ ...e, texto: e.detalhe });

@@ -9,6 +9,15 @@
     "inicioPadrao": "2027-03-08"
   },
   {
+    "slug": "carreira",
+    "nome": "Carreira",
+    "curto": "Carreira",
+    "pasta": "~/Documents/Trilha Carreira",
+    "mundo": "A Guilda",
+    "lema": "Cada vaga é uma missão no quadro da guilda. Treine antes de aceitar o contrato.",
+    "inicioPadrao": "2026-12-07"
+  },
+  {
     "slug": "enem",
     "nome": "ENEM 2026",
     "curto": "ENEM",

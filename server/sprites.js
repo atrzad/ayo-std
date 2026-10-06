@@ -225,7 +225,27 @@ function livro() {
   return [contornar(deMapa(MAPA_LIVRO, { r: '#7a2626', R: '#a83a3a', g: '#e0b94f', p: '#efe6d2' }))];
 }
 
-const FABRICAS = { fogueira, picareta, orbe, triforca, moeda, coracao, minerio, lagrima, caveira, ampulheta, frasco, livro };
+// ---------- pergaminho com selo (trilha Carreira: o contrato da guilda) ----------
+const MAPA_SELO = [
+  '.rrrrrrrrrr.',
+  'rRRRRRRRRRRr',
+  '.pppppppppp.',
+  '.pllllllllp.',
+  '.pppppppppp.',
+  '.pllllllllp.',
+  '.pppppppppp.',
+  '.plllpssspp.',
+  '.pppsSSSspp.',
+  '.pppsSSSspp.',
+  '.ppppsssppp.',
+  'rRRRRtRtRRRr',
+  '.rrrrtrtrrr.',
+];
+function selo() {
+  return [contornar(deMapa(MAPA_SELO, { r: '#7a5a32', R: '#a8875a', p: '#efe2c0', l: '#a39782', s: '#8f1f18', S: '#d0453a', t: '#b3261e' }))];
+}
+
+const FABRICAS = { fogueira, picareta, orbe, triforca, moeda, coracao, minerio, lagrima, caveira, ampulheta, frasco, livro, selo };
 const memo = new Map();
 
 export function sprite(nome, opcoes = {}) {
@@ -236,4 +256,4 @@ export function sprite(nome, opcoes = {}) {
   return svg(memo.get(chave), { ...resto, classe });
 }
 
-export const EMBLEMAS = { inicio: 'fogueira', dev: 'picareta', enem: 'orbe', manausprev: 'triforca', bb: 'moeda' };
+export const EMBLEMAS = { inicio: 'fogueira', dev: 'picareta', carreira: 'selo', enem: 'orbe', manausprev: 'triforca', bb: 'moeda' };

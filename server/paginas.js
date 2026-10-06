@@ -68,31 +68,87 @@ function barraFoco(foco, px, trilhas) {
   </aside>`;
 }
 
-export function layout({ titulo, ativo = 'inicio', usuario = null, corpo, classe = '', trilhas = [], almas = null, foco = null, scripts = [] }) {
-  const px = ehPixel(usuario);
-  const aba = (slug, href, rotulo, icone) => `<a class="aba t-${slug}${ativo === slug ? ' ativa' : ''}" href="${href}"${
-    ativo === slug ? ' aria-current="page"' : ''}>${px ? icone : ''}<span>${esc(rotulo)}</span></a>`;
-  const abas = [
-    aba('inicio', '/', px ? 'Fogueira' : 'Início', sprite('fogueira', { escala: 2 })),
-    ...trilhas.filter((t) => !t.espaco).map((t) => aba(t.slug, `/t/${t.slug}`, t.curto, emblema(t.slug, 2))),
-    aba('espaco', '/espaco', 'Meu espaço', sprite('picareta', { escala: 2 })),
-    aba('foco', '/foco', 'Foco', sprite('ampulheta', { escala: 2 })),
-    `<a class="aba t-caderno" href="${SKETCHBOOK}" title="Abrir o Ayo Sketchbook (notas e caneta)">${px ? sprite('livro', { escala: 2 }) : ''}<span>Sketchbook ↗</span></a>`,
-    aba('grupo', '/grupo', 'Grupo', sprite('fogueira', { escala: 2 })),
-  ].join('');
-  const topo = usuario ? `
-  <header class="topo">
-    ${px ? `<div class="brasas" aria-hidden="true">${'<i></i>'.repeat(14)}</div>` : ''}
-    <div class="topo-in">
+// Ícone de cada destino: sprite no tema pixel; no tema normal, uma letra (aparece com a barra recolhida).
+const icone = (px, spriteHtml, letra) => (px ? spriteHtml : `<i class="nav-letra" aria-hidden="true">${esc(letra)}</i>`);
+// "Manaus Prev" → "MP", "BB" → "BB", "Carreira" → "C".
+const sigla = (nome) => {
+  const palavras = String(nome || '?').trim().split(/\s+/);
+  if (palavras.length === 1) return /^[A-Z]{2,3}$/.test(palavras[0]) ? palavras[0] : palavras[0][0].toUpperCase();
+  return palavras.slice(0, 2).map((p) => p[0]).join('').toUpperCase();
+};
+
+// Navegação: barra lateral fixa no computador; no celular, gaveta aberta pelo botão ☰ do cabeçalho.
+// Funciona sem JavaScript: o ☰ é um link para #navegacao e a gaveta abre por :target.
+function navegacao({ px, ativo, usuario, trilhas, almas, notaAtual }) {
+  const item = (slug, href, rotulo, ico, extra = '') => `<a class="nav-item t-${slug}${ativo === slug ? ' ativa' : ''}" href="${href}"${
+    ativo === slug ? ' aria-current="page"' : ''} title="${esc(rotulo)}">${ico}<span class="nav-rot">${esc(rotulo)}</span>${extra}</a>`;
+  const cofres = trilhas.filter((t) => !t.espaco);
+  const caminhos = cofres.map((t) => {
+    const aberta = ativo === t.slug;
+    const pct = typeof t.pct === 'number' ? t.pct : null;
+    const notas = aberta && t.notas?.length ? `
+        <ul class="nav-notas" aria-label="Notas de ${esc(t.nome)}">${t.notas.map((n) => {
+          const atual = n.rel === notaAtual;
+          return `
+          <li><a class="nav-nota${atual ? ' atual' : ''}" href="/t/${t.slug}/n/${caminhoURL(n.rel)}"${atual ? ' aria-current="page" data-nav-nota-atual' : ''}>
+            <span>${esc(n.titulo)}</span>${n.total ? `<small data-nav-contagem>${n.feitas}/${n.total}</small>` : ''}</a></li>`;
+        }).join('')}
+        </ul>` : '';
+    return `
+      <li class="nav-trilha t-${t.slug}${aberta ? ' aberta' : ''}">
+        ${item(t.slug, `/t/${t.slug}`, t.nome, icone(px, emblema(t.slug, 2), sigla(t.curto || t.nome)), pct == null ? '' : `<b class="nav-pct">${pctTxt(pct)}</b>`)}
+        ${pct == null ? '' : medidor(pct, { rotulo: `Progresso de ${t.nome}`, classe: 'tc nav-medidor' })}${notas}
+      </li>`;
+  }).join('');
+  const ferramentas = [
+    item('foco', '/foco', 'Foco', icone(px, sprite('ampulheta', { escala: 2 }), 'F')),
+    item('espaco', '/espaco', 'Meu espaço', icone(px, sprite('picareta', { escala: 2 }), 'E')),
+    `<a class="nav-item t-caderno" href="${SKETCHBOOK}" title="Abrir o Ayo Sketchbook (notas e caneta)">${icone(px, sprite('livro', { escala: 2 }), 'S')}<span class="nav-rot">Sketchbook ↗</span></a>`,
+    item('grupo', '/grupo', 'Grupo', icone(px, sprite('fogueira', { escala: 2 }), 'G')),
+  ].map((a) => `<li>${a}</li>`).join('');
+  return `
+  <nav class="navlat" id="navegacao" aria-label="Navegação">
+    <div class="navlat-topo">
+      ${px ? `<div class="brasas" aria-hidden="true">${'<i></i>'.repeat(10)}</div>` : ''}
       <a class="marca" href="/" aria-label="Ayo Std, início">${px ? sprite('fogueira', { escala: 3 }) : ''}<span class="marca-txt"><span class="marca-nome">Ayo</span><span class="marca-std">Std</span></span></a>
-      <nav class="abas" aria-label="Trilhas">${abas}</nav>
-      <div class="hud">
-        ${px && almas != null ? `<span class="almas" title="Lágrimas: tarefas concluídas">${sprite('lagrima', { escala: 2 })}<b>${fmt.format(almas)}</b></span>` : ''}
-        <a class="conta-link${ativo === 'conta' ? ' ativa' : ''}" href="/configuracoes" title="Configurações">@${esc(usuario.arroba || usuario.usuario)}</a>
-        <button type="button" class="btn btn-sair" data-sair>Sair</button>
-      </div>
+      <button type="button" class="navlat-recolher" data-nav-recolher aria-pressed="false" title="Recolher a barra lateral"><span aria-hidden="true">«</span><span class="visivel-leitor">Recolher a barra lateral</span></button>
+      <a class="navlat-fechar" href="#" data-nav-fechar title="Fechar o menu"><span aria-hidden="true">✕</span><span class="visivel-leitor">Fechar o menu</span></a>
     </div>
-  </header>` : '';
+    <div class="navlat-rolagem">
+      <ul class="nav-lista">
+        <li>${item('inicio', '/', px ? 'Fogueira' : 'Início', icone(px, sprite('fogueira', { escala: 2 }), 'I'))}</li>
+      </ul>
+      ${cofres.length ? `<p class="nav-grupo">Caminhos</p>
+      <ul class="nav-lista">${caminhos}
+      </ul>` : ''}
+      <p class="nav-grupo">Ferramentas</p>
+      <ul class="nav-lista">${ferramentas}</ul>
+    </div>
+    <div class="navlat-pe">
+      ${px && almas != null ? `<span class="almas" title="Lágrimas: tarefas concluídas">${sprite('lagrima', { escala: 2 })}<b>${fmt.format(almas)}</b></span>` : ''}
+      <a class="conta-link${ativo === 'conta' ? ' ativa' : ''}" href="/configuracoes" title="Configurações">@${esc(usuario.arroba || usuario.usuario)}</a>
+      <button type="button" class="btn btn-sair" data-sair>Sair</button>
+    </div>
+  </nav>
+  <a class="nav-fundo" href="#" data-nav-fechar tabindex="-1" aria-hidden="true"></a>`;
+}
+
+export function layout({ titulo, ativo = 'inicio', usuario = null, corpo, classe = '', trilhas = [], almas = null, foco = null, scripts = [], notaAtual = null }) {
+  const px = ehPixel(usuario);
+  const topoMovel = usuario ? `
+    <header class="topo-movel">
+      ${px ? `<div class="brasas" aria-hidden="true">${'<i></i>'.repeat(8)}</div>` : ''}
+      <a class="hamburguer" href="#navegacao" data-nav-abrir aria-controls="navegacao" aria-expanded="false" title="Abrir o menu"><span class="hamburguer-linhas" aria-hidden="true"><i></i><i></i><i></i></span><span class="visivel-leitor">Abrir o menu</span></a>
+      <a class="marca" href="/" aria-label="Ayo Std, início">${px ? sprite('fogueira', { escala: 2 }) : ''}<span class="marca-txt"><span class="marca-nome">Ayo</span><span class="marca-std">Std</span></span></a>
+      ${px && almas != null ? `<span class="almas" title="Lágrimas: tarefas concluídas">${sprite('lagrima', { escala: 2 })}<b>${fmt.format(almas)}</b></span>` : ''}
+    </header>` : '';
+  const rodape = `<footer class="rodape envolve"><a href="/privacidade">Privacidade e regras</a>${usuario ? ' · <a href="/configuracoes">Configurações</a>' : ' · <a href="/convite">Tenho um convite</a>'}</footer>`;
+  const conteudo = `
+${usuario ? barraFoco(foco, px, trilhas) : ''}
+<main id="conteudo">
+${corpo}
+</main>
+${rodape}`;
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -105,14 +161,15 @@ ${px ? '<link rel="stylesheet" href="/css/fontes.css">\n<link rel="stylesheet" h
 <script src="/js/ayo.js" defer></script>
 ${scripts.map((src) => `<script src="${src}" defer></script>`).join('\n')}
 </head>
-<body class="${px ? 'tema-pixel' : 'tema-normal'}${usuario && foco ? ' com-foco' : ''} ${esc(classe)}">
+<body class="${px ? 'tema-pixel' : 'tema-normal'}${usuario ? ' com-nav' : ''}${usuario && foco ? ' com-foco' : ''} ${esc(classe)}">
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-${topo}
-${usuario ? barraFoco(foco, px, trilhas) : ''}
-<main id="conteudo">
-${corpo}
-</main>
-<footer class="rodape envolve"><a href="/privacidade">Privacidade e regras</a>${usuario ? ' · <a href="/configuracoes">Configurações</a>' : ' · <a href="/convite">Tenho um convite</a>'}</footer>
+${usuario ? `<div class="casca">
+${navegacao({ px, ativo, usuario, trilhas, almas, notaAtual })}
+<div class="coluna">
+${topoMovel}
+${conteudo}
+</div>
+</div>` : conteudo}
 <div class="aviso-cookies caixa" data-aviso-cookies hidden role="region" aria-label="Aviso de cookies">
   <p>Este site usa <b>apenas cookies essenciais</b>: o da sua sessão de login. Preferências como som e caneta ficam só no seu navegador. Nada é vendido nem enviado a terceiros.</p>
   <div class="foco-botoes"><button type="button" class="btn btn-ouro" data-aceitar-cookies>Entendi e aceito</button><a class="btn" href="/privacidade">Ler a política</a></div>
@@ -465,7 +522,7 @@ export function paginaTrilha({ usuario, trilhas, almas, foco, t, info, notas, ar
     </section>
     <div class="trilha-grade envolve">
       <section>
-        <h2 class="titulo-secao">${t.slug === 'dev' ? 'Fases' : px ? 'Notas do cofre' : 'Conteúdo'}</h2>
+        <h2 class="titulo-secao">${t.slug === 'dev' ? 'Fases' : t.slug === 'carreira' ? 'Partes' : px ? 'Notas do cofre' : 'Conteúdo'}</h2>
         <ul class="notas caixa">${listaNotas || '<li class="vazio">Nenhuma nota encontrada.</li>'}</ul>
         <h2 class="titulo-secao">Anotações</h2>
         <div class="caixa anotacoes-trilha">
@@ -491,10 +548,10 @@ export function paginaNota({ usuario, trilhas, almas, foco, t, nota, html, toc }
   const px = ehPixel(usuario);
   const pct = nota.total ? (100 * nota.feitas) / nota.total : null;
   const indice = toc.length > 1 ? `
-    <nav class="indice caixa" aria-label="Seções da nota">
-      <p class="indice-rot">Seções</p>
-      <ol>${toc.map((s) => `<li class="n${s.nivel}"><a href="#${esc(s.id)}" data-secao="${esc(s.id)}">${esc(s.texto)}</a></li>`).join('')}</ol>
-    </nav>` : '';
+    <details class="indice caixa" data-indice-nota open>
+      <summary class="indice-rot">Seções</summary>
+      <nav aria-label="Seções da nota"><ol>${toc.map((s) => `<li class="n${s.nivel}"><a href="#${esc(s.id)}" data-secao="${esc(s.id)}">${esc(s.texto)}</a></li>`).join('')}</ol></nav>
+    </details>` : '';
   return layout({
     titulo: nota.tituloCurto,
     ativo: t.slug,
@@ -503,6 +560,7 @@ export function paginaNota({ usuario, trilhas, almas, foco, t, nota, html, toc }
     almas,
     foco,
     classe: `pg-nota t-${t.slug}`,
+    notaAtual: nota.rel,
     corpo: `
     <div class="envolve nota-cabeca">
       <nav class="migalhas" aria-label="Você está em"><a href="/t/${t.slug}">${esc(px ? (t.mundo || t.nome) : t.nome)}</a> <span aria-hidden="true">›</span> <span>${esc(px ? nota.rel : nota.tituloCurto)}</span></nav>
@@ -1072,7 +1130,7 @@ export function paginaEspaco({ usuario, trilhas, almas, foco, e, notas, cores, p
 
 export function paginaEspacoNota({ usuario, trilhas, almas, foco, e, n, html, toc }) {
   const pct = n.total ? (100 * n.feitas) / n.total : null;
-  const indice = toc.length > 1 ? `<nav class="indice caixa" aria-label="Seções"><p class="indice-rot">Seções</p><ol>${toc.map((s2) => `<li class="n${s2.nivel}"><a href="#${esc(s2.id)}" data-secao="${esc(s2.id)}">${esc(s2.texto)}</a></li>`).join('')}</ol></nav>` : '';
+  const indice = toc.length > 1 ? `<details class="indice caixa" data-indice-nota open><summary class="indice-rot">Seções</summary><nav aria-label="Seções"><ol>${toc.map((s2) => `<li class="n${s2.nivel}"><a href="#${esc(s2.id)}" data-secao="${esc(s2.id)}">${esc(s2.texto)}</a></li>`).join('')}</ol></nav></details>` : '';
   return layout({
     titulo: n.titulo, ativo: 'espaco', usuario, trilhas, almas, foco, classe: `pg-nota c-${esc(e.cor)}`,
     corpo: `
